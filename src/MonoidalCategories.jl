@@ -4,6 +4,8 @@ module MonoidalCategories
 
 using CAP
 
+import CAP.TensorProductOp
+
 push!(ModulesForEvaluationStack, MonoidalCategories)
 
 include("init.jl")
