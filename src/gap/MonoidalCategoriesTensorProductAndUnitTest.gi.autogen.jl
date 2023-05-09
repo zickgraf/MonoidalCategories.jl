@@ -16,10 +16,10 @@
               a_tensor_b, a_tensor_b_op,
               b_tensor_a, b_tensor_a_op;
         
-        opposite = Opposite( cat );
+        opposite = Opposite( cat, "Opposite" );
         
-        a_op = Opposite( a );
-        b_op = Opposite( b );
+        a_op = Opposite( opposite, a );
+        b_op = Opposite( opposite, b );
         
         verbose = ValueOption( "verbose" ) == true;
         
@@ -35,7 +35,7 @@
             u = TensorUnit( cat );
             u_op = TensorUnit( opposite );
             
-            @Assert( 0, IsEqualForObjects( u_op, Opposite( u ) ) );
+            @Assert( 0, IsEqualForObjects( u_op, Opposite( opposite, u ) ) );
             
         end;
         
@@ -54,8 +54,8 @@
             a_tensor_b_op = TensorProductOnObjects( a_op, b_op );
             b_tensor_a_op = TensorProductOnObjects( b_op, a_op );
             
-            @Assert( 0, IsEqualForObjects( a_tensor_b_op, Opposite( a_tensor_b ) ) );
-            @Assert( 0, IsEqualForObjects( b_tensor_a_op, Opposite( b_tensor_a ) ) );
+            @Assert( 0, IsEqualForObjects( a_tensor_b_op, Opposite( opposite, a_tensor_b ) ) );
+            @Assert( 0, IsEqualForObjects( b_tensor_a_op, Opposite( opposite, b_tensor_a ) ) );
             
             # Convenience methods ⥉ the opposite category
             

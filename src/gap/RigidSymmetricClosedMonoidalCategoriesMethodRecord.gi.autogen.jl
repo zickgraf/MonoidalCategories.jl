@@ -25,7 +25,6 @@ CoevaluationForDualWithGivenTensorProduct = rec(
   return_type = "morphism",
   dual_operation = "CoclosedCoevaluationForCoDualWithGivenTensorProduct",
   dual_arguments_reversed = true,
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 MorphismFromBidual = rec(
@@ -46,7 +45,6 @@ MorphismFromBidualWithGivenBidual = rec(
   return_type = "morphism",
   dual_operation = "MorphismToCoBidualWithGivenCoBidual",
   dual_arguments_reversed = false,
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 TensorProductInternalHomCompatibilityMorphismInverse = rec(
@@ -75,7 +73,6 @@ TensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects = rec(
   dual_preprocessor_func =
     ( cat, s, list, r ) -> NTupleGAP( 4, Opposite( cat ), Opposite( r ), [ Opposite( list[2] ), Opposite( list[4] ), Opposite( list[1] ), Opposite( list[3] ) ], Opposite( s ) ),
   dual_arguments_reversed = false,
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 MorphismFromInternalHomToTensorProduct = rec(
@@ -97,9 +94,7 @@ MorphismFromInternalHomToTensorProductWithGivenObjects = rec(
   io_type = [ [ "s", "a", "b", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
   dual_operation = "MorphismFromTensorProductToInternalCoHomWithGivenObjects",
-  dual_preprocessor_func = ( cat, s, a, b, r ) -> NTupleGAP( 5, Opposite( cat ), Opposite( r ), Opposite( a ), Opposite( b ), Opposite( s ) ),
-  dual_arguments_reversed = false,
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
+  dual_with_given_objects_reversed = true,
 ),
 
 TraceMap = rec(
