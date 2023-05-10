@@ -56,10 +56,10 @@
     
     L = List( L[(1):(Length( L ) - 5)], name -> [ name, key_val_rec[name] ] );
     
-    L = Concatenation(
-                 [ [ "\"MonoidalCategories\",", Concatenation( "\"", package_name, "\"," ) ],
-                   [ Concatenation( PackageInfo( "MonoidalCategories" )[1].PackageName, ": ", PackageInfo( "MonoidalCategories" )[1].Subtitle ),
-                     Concatenation( PackageInfo( package_name )[1].PackageName, ": ", PackageInfo( package_name )[1].Subtitle ) ],
+    L = @Concatenation(
+                 [ [ "\"MonoidalCategories\",", @Concatenation( "\"", package_name, "\"," ) ],
+                   [ @Concatenation( PackageInfo( "MonoidalCategories" )[1].PackageName, ": ", PackageInfo( "MonoidalCategories" )[1].Subtitle ),
+                     @Concatenation( PackageInfo( package_name )[1].PackageName, ": ", PackageInfo( package_name )[1].Subtitle ) ],
                    [ "Closed Monoidal", key_val_rec.ClosedSMonoidal ],
                    [ "TensorProductOnObjects( cat,", key_val_rec.TensorProductOnObjectsBCcat ],
                    [ "METHOD_NAME_RECORD, \"MonoidalCategories\"", key_val_rec.CAP_INTERNAL_REGISTER_METHOD_NAME_RECORD_OF_PACKAGE ],
@@ -74,7 +74,7 @@
     end;
     
     if IsBound( key_val_rec.safe_replace )
-        L = Concatenation(
+        L = @Concatenation(
                      List( key_val_rec.safe_replace, r -> [ r[1], ShaSum( r[1] ) ] ), ## detect at the very beginning && replace by sha's (order is important!)
                      L,
                      List( key_val_rec.safe_replace, r -> [ ShaSum( r[1] ), r[2] ] ) ); ## safely replace the sha's at the very end
@@ -91,7 +91,7 @@ end );
     
     L = CAP_INTERNAL_FUNC_FOR_CLOSED_MONOIDAL_STRUCTURES( key_val_rec, package_name );
     
-    dir = Concatenation( PackageInfo( "MonoidalCategories" )[1].InstallationPath, "/gap/" );
+    dir = @Concatenation( PackageInfo( "MonoidalCategories" )[1].InstallationPath, "/gap/" );
     
     files = [ "ClosedMonoidalCategories_gd",
                "ClosedMonoidalCategoriesTest_gd",
@@ -112,15 +112,15 @@ end );
                "HomomorphismStructureDerivedMethods_gi",
                ];
     
-    header = Concatenation(
+    header = @Concatenation(
                       "# THIS FILE WAS AUTOMATICALLY GENERATED",
                       "\n\n" );
     for file in files
         if !IsBound( files_rec[file] )
             Info( InfoWarning, 1, "the component ", file, " is !bound ⥉ the record 'files_rec'" );
         elseif IsString( files_rec[file] )
-            source = Concatenation( dir, ReplacedString( file, "_", "." ) );
-            target = Concatenation( PackageInfo( package_name )[1].InstallationPath, "/gap/", files_rec[file] );
+            source = @Concatenation( dir, ReplacedString( file, "_", "." ) );
+            target = @Concatenation( PackageInfo( package_name )[1].InstallationPath, "/gap/", files_rec[file] );
             WriteReplacedFileForHomalg( source, L, target; header = header );
         end;
     end;
