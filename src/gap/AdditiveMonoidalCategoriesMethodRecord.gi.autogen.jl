@@ -4,9 +4,9 @@
 # Implementations
 #
 
-@InstallValueConst( DISTRIBUTIVE_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, rec(
+@InstallValueConst( DISTRIBUTIVE_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, @rec(
 
-LeftDistributivityExpanding = rec(
+LeftDistributivityExpanding = @rec(
   filter_list = [ "category", "object", "list_of_objects" ],
   io_type = [ [ "a", "L" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, a, DirectSum( cat, L ) )",
@@ -20,7 +20,7 @@ LeftDistributivityExpanding = rec(
   # Test ⥉ AdditiveMonoidalCategoriesTest
 ),
 
-LeftDistributivityExpandingWithGivenObjects = rec(
+LeftDistributivityExpandingWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "list_of_objects", "object" ],
   io_type = [ [ "s", "a", "L", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -28,7 +28,7 @@ LeftDistributivityExpandingWithGivenObjects = rec(
   dual_with_given_objects_reversed = true,
 ),
 
-LeftDistributivityFactoring = rec(
+LeftDistributivityFactoring = @rec(
   filter_list = [ "category", "object", "list_of_objects" ],
   io_type = [ [ "a", "L" ], [ "s", "r" ] ],
   output_source_getter_string = "DirectSum( cat, List( L, summand -> TensorProductOnObjects( cat, a, summand ) ) )",
@@ -42,7 +42,7 @@ LeftDistributivityFactoring = rec(
   # Test ⥉ AdditiveMonoidalCategoriesTest
 ),
 
-LeftDistributivityFactoringWithGivenObjects = rec(
+LeftDistributivityFactoringWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "list_of_objects", "object" ],
   io_type = [ [ "s", "a", "L", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -50,7 +50,7 @@ LeftDistributivityFactoringWithGivenObjects = rec(
   dual_with_given_objects_reversed = true,
 ),
 
-RightDistributivityExpanding = rec(
+RightDistributivityExpanding = @rec(
   filter_list = [ "category", "list_of_objects", "object" ],
   io_type = [ [ "L", "a" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, DirectSum( cat, L ), a )",
@@ -64,7 +64,7 @@ RightDistributivityExpanding = rec(
   # Test ⥉ AdditiveMonoidalCategoriesTest
 ),
 
-RightDistributivityExpandingWithGivenObjects = rec(
+RightDistributivityExpandingWithGivenObjects = @rec(
   filter_list = [ "category", "object", "list_of_objects", "object", "object" ],
   io_type = [ [ "s", "L", "a", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -72,7 +72,7 @@ RightDistributivityExpandingWithGivenObjects = rec(
   dual_with_given_objects_reversed = true,
 ),
 
-RightDistributivityFactoring = rec(
+RightDistributivityFactoring = @rec(
   filter_list = [ "category", "list_of_objects", "object" ],
   io_type = [ [ "L", "a" ], [ "s", "r" ] ],
   output_source_getter_string = "DirectSum( cat, List( L, summand -> TensorProductOnObjects( cat, summand, a ) ) )",
@@ -86,7 +86,7 @@ RightDistributivityFactoring = rec(
   # Test ⥉ AdditiveMonoidalCategoriesTest
 ),
 
-RightDistributivityFactoringWithGivenObjects = rec(
+RightDistributivityFactoringWithGivenObjects = @rec(
   filter_list = [ "category", "object", "list_of_objects", "object", "object" ],
   io_type = [ [ "s", "L", "a", "r" ], [ "s", "r" ] ],
   return_type = "morphism",

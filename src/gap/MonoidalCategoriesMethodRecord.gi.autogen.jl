@@ -4,11 +4,11 @@
 # Implementations
 #
 
-@InstallValueConst( MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, rec(
+@InstallValueConst( MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, @rec(
 
 ## Basic Operations for Monoidal Categories
 
-TensorProductOnMorphisms = rec(
+TensorProductOnMorphisms = @rec(
   filter_list = [ "category", "morphism", "morphism" ],
   io_type = [ [ "alpha", "beta" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, Source( alpha ), Source( beta ) )",
@@ -23,7 +23,7 @@ TensorProductOnMorphisms = rec(
   # Test ⥉ MonoidalCategoriesTest
 ),
 
-TensorProductOnMorphismsWithGivenTensorProducts = rec(
+TensorProductOnMorphismsWithGivenTensorProducts = @rec(
   filter_list = [ "category", "object", "morphism", "morphism", "object" ],
   io_type = [ [ "s", "alpha", "beta", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -32,7 +32,7 @@ TensorProductOnMorphismsWithGivenTensorProducts = rec(
   compatible_with_congruence_of_morphisms = true,
 ),
 
-AssociatorRightToLeft = rec(
+AssociatorRightToLeft = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "a", "b", "c" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, a, TensorProductOnObjects( cat, b, c ) )",
@@ -46,7 +46,7 @@ AssociatorRightToLeft = rec(
   # Test ⥉ MonoidalCategoriesTest
 ),
 
-AssociatorRightToLeftWithGivenTensorProducts = rec(
+AssociatorRightToLeftWithGivenTensorProducts = @rec(
   filter_list = [ "category", "object", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "c", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -54,7 +54,7 @@ AssociatorRightToLeftWithGivenTensorProducts = rec(
   dual_with_given_objects_reversed = true,
 ),
 
-AssociatorLeftToRight = rec(
+AssociatorLeftToRight = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "a", "b", "c" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, TensorProductOnObjects( cat, a, b ), c )",
@@ -68,7 +68,7 @@ AssociatorLeftToRight = rec(
   # Test ⥉ MonoidalCategoriesTest
 ),
 
-AssociatorLeftToRightWithGivenTensorProducts = rec(
+AssociatorLeftToRightWithGivenTensorProducts = @rec(
   filter_list = [ "category", "object", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "c", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -76,7 +76,7 @@ AssociatorLeftToRightWithGivenTensorProducts = rec(
   dual_with_given_objects_reversed = true,
 ),
 
-LeftUnitor = rec(
+LeftUnitor = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "s", "a" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, TensorUnit( cat ), a )",
@@ -88,7 +88,7 @@ LeftUnitor = rec(
   # Test ⥉ MonoidalCategoriesTest
 ),
 
-LeftUnitorWithGivenTensorProduct = rec(
+LeftUnitorWithGivenTensorProduct = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "s" ], [ "s", "a" ] ],
   return_type = "morphism",
@@ -96,7 +96,7 @@ LeftUnitorWithGivenTensorProduct = rec(
   dual_arguments_reversed = false,
 ),
 
-LeftUnitorInverse = rec(
+LeftUnitorInverse = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "a", "r" ] ],
   output_source_getter_string = "a",
@@ -108,7 +108,7 @@ LeftUnitorInverse = rec(
   # Test ⥉ MonoidalCategoriesTest
 ),
 
-LeftUnitorInverseWithGivenTensorProduct = rec(
+LeftUnitorInverseWithGivenTensorProduct = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "r" ], [ "a", "r" ] ],
   return_type = "morphism",
@@ -116,7 +116,7 @@ LeftUnitorInverseWithGivenTensorProduct = rec(
   dual_arguments_reversed = false,
 ),
 
-RightUnitor = rec(
+RightUnitor = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "s", "a" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, a, TensorUnit( cat ) )",
@@ -128,7 +128,7 @@ RightUnitor = rec(
   # Test ⥉ MonoidalCategoriesTest
 ),
 
-RightUnitorWithGivenTensorProduct = rec(
+RightUnitorWithGivenTensorProduct = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "s" ], [ "s", "a" ] ],
   return_type = "morphism",
@@ -136,7 +136,7 @@ RightUnitorWithGivenTensorProduct = rec(
   dual_arguments_reversed = false,
 ),
 
-RightUnitorInverse = rec(
+RightUnitorInverse = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "a", "r" ] ],
   output_source_getter_string = "a",
@@ -148,7 +148,7 @@ RightUnitorInverse = rec(
   # Test ⥉ MonoidalCategoriesTest
 ),
 
-RightUnitorInverseWithGivenTensorProduct = rec(
+RightUnitorInverseWithGivenTensorProduct = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "r" ], [ "a", "r" ] ],
   return_type = "morphism",

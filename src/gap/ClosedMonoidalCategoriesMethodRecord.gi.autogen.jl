@@ -4,9 +4,9 @@
 # Implementations
 #
 
-@InstallValueConst( CLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, rec(
+@InstallValueConst( CLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, @rec(
 
-InternalHomOnObjects = rec(
+InternalHomOnObjects = @rec(
   filter_list = [ "category", "object", "object" ],
   input_arguments_names = [ "cat", "a", "b" ],
   return_type = "object",
@@ -15,7 +15,7 @@ InternalHomOnObjects = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-InternalHomOnMorphisms = rec(
+InternalHomOnMorphisms = @rec(
   filter_list = [ "category", "morphism", "morphism" ],
   io_type = [ [ "alpha", "beta" ], [ "s", "r" ] ],
   output_source_getter_string = "InternalHomOnObjects( cat, Range( alpha ), Source( beta ) )",
@@ -29,7 +29,7 @@ InternalHomOnMorphisms = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-InternalHomOnMorphismsWithGivenInternalHoms = rec(
+InternalHomOnMorphismsWithGivenInternalHoms = @rec(
   filter_list = [ "category", "object", "morphism", "morphism", "object" ],
   io_type = [ [ "s", "alpha", "beta", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -37,7 +37,7 @@ InternalHomOnMorphismsWithGivenInternalHoms = rec(
   dual_arguments_reversed = true,
 ),
 
-EvaluationMorphism = rec(
+EvaluationMorphism = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "s", "b" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, InternalHomOnObjects( cat, a, b ), a )",
@@ -50,7 +50,7 @@ EvaluationMorphism = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-EvaluationMorphismWithGivenSource = rec(
+EvaluationMorphismWithGivenSource = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "a", "b", "s" ], [ "s", "b" ] ],
   return_type = "morphism",
@@ -59,7 +59,7 @@ EvaluationMorphismWithGivenSource = rec(
   dual_arguments_reversed = false,
 ),
 
-CoevaluationMorphism = rec(
+CoevaluationMorphism = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "a", "r" ] ],
   output_source_getter_string = "a",
@@ -72,7 +72,7 @@ CoevaluationMorphism = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-CoevaluationMorphismWithGivenRange = rec(
+CoevaluationMorphismWithGivenRange = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "a", "b", "r" ], [ "a", "r" ] ],
   return_type = "morphism",
@@ -80,7 +80,7 @@ CoevaluationMorphismWithGivenRange = rec(
   dual_arguments_reversed = false,
 ),
 
-TensorProductToInternalHomAdjunctionMap = rec(
+TensorProductToInternalHomAdjunctionMap = @rec(
   filter_list = [ "category", "object", "object", "morphism" ],
   io_type = [ [ "a", "b", "f" ], [ "a", "i" ] ],
   return_type = "morphism",
@@ -89,7 +89,7 @@ TensorProductToInternalHomAdjunctionMap = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-TensorProductToInternalHomAdjunctionMapWithGivenInternalHom = rec(
+TensorProductToInternalHomAdjunctionMapWithGivenInternalHom = @rec(
   filter_list = [ "category", "object", "object", "morphism", "object" ],
   io_type = [ [ "a", "b", "f", "i" ], [ "a", "i" ] ],
   return_type = "morphism",
@@ -97,7 +97,7 @@ TensorProductToInternalHomAdjunctionMapWithGivenInternalHom = rec(
   dual_arguments_reversed = false,
 ),
 
-InternalHomToTensorProductAdjunctionMap = rec(
+InternalHomToTensorProductAdjunctionMap = @rec(
   filter_list = [ "category", "object", "object", "morphism" ],
   io_type = [ [ "b", "c", "g" ], [ "t", "c" ] ],
   return_type = "morphism",
@@ -107,7 +107,7 @@ InternalHomToTensorProductAdjunctionMap = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-InternalHomToTensorProductAdjunctionMapWithGivenTensorProduct = rec(
+InternalHomToTensorProductAdjunctionMapWithGivenTensorProduct = @rec(
   filter_list = [ "category", "object", "object", "morphism", "object" ],
   io_type = [ [ "b", "c", "g", "t" ], [ "t", "c" ] ],
   return_type = "morphism",
@@ -116,7 +116,7 @@ InternalHomToTensorProductAdjunctionMapWithGivenTensorProduct = rec(
   dual_arguments_reversed = false,
 ),
 
-MonoidalPreComposeMorphism = rec(
+MonoidalPreComposeMorphism = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "a", "b", "c" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, InternalHomOnObjects( cat, a, b ), InternalHomOnObjects( cat, b, c ) )",
@@ -130,7 +130,7 @@ MonoidalPreComposeMorphism = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-MonoidalPreComposeMorphismWithGivenObjects = rec(
+MonoidalPreComposeMorphismWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "c", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -138,7 +138,7 @@ MonoidalPreComposeMorphismWithGivenObjects = rec(
   dual_arguments_reversed = true,
 ),
 
-MonoidalPostComposeMorphism = rec(
+MonoidalPostComposeMorphism = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "a", "b", "c" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, InternalHomOnObjects( cat, b, c ), InternalHomOnObjects( cat, a, b ) )",
@@ -152,7 +152,7 @@ MonoidalPostComposeMorphism = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-MonoidalPostComposeMorphismWithGivenObjects = rec(
+MonoidalPostComposeMorphismWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "c", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -160,7 +160,7 @@ MonoidalPostComposeMorphismWithGivenObjects = rec(
   dual_arguments_reversed = true,
 ),
 
-DualOnObjects = rec(
+DualOnObjects = @rec(
   filter_list = [ "category", "object" ],
   input_arguments_names = [ "cat", "a" ],
   return_type = "object",
@@ -168,7 +168,7 @@ DualOnObjects = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-DualOnMorphisms = rec(
+DualOnMorphisms = @rec(
   filter_list = [ "category", "morphism" ],
   io_type = [ [ "alpha" ], [ "s", "r" ] ],
   output_source_getter_string = "DualOnObjects( cat, Range( alpha ) )",
@@ -181,7 +181,7 @@ DualOnMorphisms = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-DualOnMorphismsWithGivenDuals = rec(
+DualOnMorphismsWithGivenDuals = @rec(
   filter_list = [ "category", "object", "morphism", "object" ],
   io_type = [ [ "s", "alpha", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -189,7 +189,7 @@ DualOnMorphismsWithGivenDuals = rec(
   dual_arguments_reversed = true,
 ),
 
-EvaluationForDual = rec(
+EvaluationForDual = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, DualOnObjects( cat, a ), a )",
@@ -202,7 +202,7 @@ EvaluationForDual = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-EvaluationForDualWithGivenTensorProduct = rec(
+EvaluationForDualWithGivenTensorProduct = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "s", "a", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -210,7 +210,7 @@ EvaluationForDualWithGivenTensorProduct = rec(
   dual_arguments_reversed = true,
 ),
 
-MorphismToBidual = rec(
+MorphismToBidual = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "a", "r" ] ],
   output_source_getter_string = "a",
@@ -222,7 +222,7 @@ MorphismToBidual = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-MorphismToBidualWithGivenBidual = rec(
+MorphismToBidualWithGivenBidual = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "r" ], [ "a", "r" ] ],
   return_type = "morphism",
@@ -230,7 +230,7 @@ MorphismToBidualWithGivenBidual = rec(
   dual_arguments_reversed = false,
 ),
 
-TensorProductInternalHomCompatibilityMorphism = rec(
+TensorProductInternalHomCompatibilityMorphism = @rec(
   filter_list = [ "category", "list_of_objects" ],
   input_arguments_names = [ "cat", "list" ],
   output_source_getter_string = "TensorProductOnObjects( cat, InternalHomOnObjects( cat, list[1], list[2] ), InternalHomOnObjects( cat, list[3], list[4] ) )",
@@ -245,7 +245,7 @@ TensorProductInternalHomCompatibilityMorphism = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-TensorProductInternalHomCompatibilityMorphismWithGivenObjects = rec(
+TensorProductInternalHomCompatibilityMorphismWithGivenObjects = @rec(
   filter_list = [ "category", "object", "list_of_objects", "object" ],
   input_arguments_names = [ "cat", "source", "list", "range" ],
   output_source_getter_string = "source",
@@ -257,7 +257,7 @@ TensorProductInternalHomCompatibilityMorphismWithGivenObjects = rec(
   dual_arguments_reversed = false,
 ),
 
-TensorProductDualityCompatibilityMorphism = rec(
+TensorProductDualityCompatibilityMorphism = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, DualOnObjects( cat, a ), DualOnObjects( cat, b ) )",
@@ -271,7 +271,7 @@ TensorProductDualityCompatibilityMorphism = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-TensorProductDualityCompatibilityMorphismWithGivenObjects = rec(
+TensorProductDualityCompatibilityMorphismWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -279,7 +279,7 @@ TensorProductDualityCompatibilityMorphismWithGivenObjects = rec(
   dual_with_given_objects_reversed = true,
 ),
 
-MorphismFromTensorProductToInternalHom = rec(
+MorphismFromTensorProductToInternalHom = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, DualOnObjects( cat, a ), b )",
@@ -293,7 +293,7 @@ MorphismFromTensorProductToInternalHom = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-MorphismFromTensorProductToInternalHomWithGivenObjects = rec(
+MorphismFromTensorProductToInternalHomWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -301,7 +301,7 @@ MorphismFromTensorProductToInternalHomWithGivenObjects = rec(
   dual_arguments_reversed = true,
 ),
 
-IsomorphismFromInternalHomIntoTensorUnitToDualObject = rec(
+IsomorphismFromInternalHomIntoTensorUnitToDualObject = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "i", "d" ] ],
   output_source_getter_string = "InternalHomOnObjects( cat, a, TensorUnit( cat ) )",
@@ -313,7 +313,7 @@ IsomorphismFromInternalHomIntoTensorUnitToDualObject = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-IsomorphismFromDualObjectToInternalHomIntoTensorUnit = rec(
+IsomorphismFromDualObjectToInternalHomIntoTensorUnit = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "d", "i" ] ],
   output_source_getter_string = "DualOnObjects( cat, a )",
@@ -325,7 +325,7 @@ IsomorphismFromDualObjectToInternalHomIntoTensorUnit = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-UniversalPropertyOfDual = rec(
+UniversalPropertyOfDual = @rec(
   filter_list = [ "category", "object", "object", "morphism" ],
   io_type = [ [ "t", "a", "alpha" ], [ "t", "d" ] ],
   return_type = "morphism",
@@ -334,7 +334,7 @@ UniversalPropertyOfDual = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-LambdaIntroduction = rec(
+LambdaIntroduction = @rec(
   filter_list = [ "category", "morphism" ],
   io_type = [ [ "alpha" ], [ "u", "i" ] ],
   return_type = "morphism",
@@ -342,7 +342,7 @@ LambdaIntroduction = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-LambdaElimination = rec(
+LambdaElimination = @rec(
   filter_list = [ "category", "object", "object", "morphism" ],
   io_type = [ [ "a", "b", "alpha" ], [ "a", "b" ] ],
   return_type = "morphism",
@@ -352,7 +352,7 @@ LambdaElimination = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-IsomorphismFromObjectToInternalHom = rec(
+IsomorphismFromObjectToInternalHom = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "a", "r" ] ],
   output_source_getter_string = "a",
@@ -364,7 +364,7 @@ IsomorphismFromObjectToInternalHom = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-IsomorphismFromObjectToInternalHomWithGivenInternalHom = rec(
+IsomorphismFromObjectToInternalHomWithGivenInternalHom = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "r" ], [ "a", "r" ] ],
   return_type = "morphism",
@@ -372,7 +372,7 @@ IsomorphismFromObjectToInternalHomWithGivenInternalHom = rec(
   dual_arguments_reversed = false,
 ),
 
-IsomorphismFromInternalHomToObject = rec(
+IsomorphismFromInternalHomToObject = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "s", "a" ] ],
   output_source_getter_string = "InternalHomOnObjects( cat, TensorUnit( cat ), a )",
@@ -384,7 +384,7 @@ IsomorphismFromInternalHomToObject = rec(
   # Test ⥉ ClosedMonoidalCategoriesTest
 ),
 
-IsomorphismFromInternalHomToObjectWithGivenInternalHom = rec(
+IsomorphismFromInternalHomToObjectWithGivenInternalHom = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "s" ], [ "s", "a" ] ],
   return_type = "morphism",

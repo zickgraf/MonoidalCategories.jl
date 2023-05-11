@@ -4,9 +4,9 @@
 # Implementations
 #
 
-@InstallValueConst( BRAIDED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, rec(
+@InstallValueConst( BRAIDED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, @rec(
 
-Braiding = rec(
+Braiding = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, a, b )",
@@ -20,7 +20,7 @@ Braiding = rec(
   # Test ⥉ BraidedMonoidalCategoriesTest
 ),
 
-BraidingWithGivenTensorProducts = rec(
+BraidingWithGivenTensorProducts = @rec(
   filter_list = [ "category", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -28,7 +28,7 @@ BraidingWithGivenTensorProducts = rec(
   dual_with_given_objects_reversed = true,
 ),
 
-BraidingInverse = rec(
+BraidingInverse = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, b, a )",
@@ -42,7 +42,7 @@ BraidingInverse = rec(
   # Test ⥉ BraidedMonoidalCategoriesTest
 ),
 
-BraidingInverseWithGivenTensorProducts = rec(
+BraidingInverseWithGivenTensorProducts = @rec(
   filter_list = [ "category", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "r" ], [ "s", "r" ] ],
   return_type = "morphism",

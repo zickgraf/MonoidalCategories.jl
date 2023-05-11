@@ -4,9 +4,9 @@
 # Implementations
 #
 
-@InstallValueConst( COCLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, rec(
+@InstallValueConst( COCLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, @rec(
 
-InternalCoHomOnObjects = rec(
+InternalCoHomOnObjects = @rec(
   filter_list = [ "category", "object", "object" ],
   input_arguments_names = [ "cat", "a", "b" ],
   return_type = "object",
@@ -15,7 +15,7 @@ InternalCoHomOnObjects = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-InternalCoHomOnMorphisms = rec(
+InternalCoHomOnMorphisms = @rec(
   filter_list = [ "category", "morphism", "morphism" ],
   io_type = [ [ "alpha", "beta" ], [ "s", "r" ] ],
   output_source_getter_string = "InternalCoHomOnObjects( cat, Source( alpha ), Range( beta ) )",
@@ -29,7 +29,7 @@ InternalCoHomOnMorphisms = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-InternalCoHomOnMorphismsWithGivenInternalCoHoms = rec(
+InternalCoHomOnMorphismsWithGivenInternalCoHoms = @rec(
   filter_list = [ "category", "object", "morphism", "morphism", "object" ],
   io_type = [ [ "s", "alpha", "beta", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -37,7 +37,7 @@ InternalCoHomOnMorphismsWithGivenInternalCoHoms = rec(
   dual_arguments_reversed = true,
 ),
 
-CoclosedEvaluationMorphism = rec(
+CoclosedEvaluationMorphism = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "a", "r" ] ],
   output_source_getter_string = "a",
@@ -50,7 +50,7 @@ CoclosedEvaluationMorphism = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-CoclosedEvaluationMorphismWithGivenRange = rec(
+CoclosedEvaluationMorphismWithGivenRange = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "a", "b", "r" ], [ "a", "r" ] ],
   return_type = "morphism",
@@ -59,7 +59,7 @@ CoclosedEvaluationMorphismWithGivenRange = rec(
   dual_arguments_reversed = false,
 ),
 
-CoclosedCoevaluationMorphism = rec(
+CoclosedCoevaluationMorphism = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "s", "a" ] ],
   output_source_getter_string = "InternalCoHomOnObjects( cat, TensorProductOnObjects( cat, a, b ), b )",
@@ -72,7 +72,7 @@ CoclosedCoevaluationMorphism = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-CoclosedCoevaluationMorphismWithGivenSource = rec(
+CoclosedCoevaluationMorphismWithGivenSource = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "a", "b", "s" ], [ "s", "a" ] ],
   return_type = "morphism",
@@ -80,7 +80,7 @@ CoclosedCoevaluationMorphismWithGivenSource = rec(
   dual_arguments_reversed = false,
 ),
 
-TensorProductToInternalCoHomAdjunctionMap = rec(
+TensorProductToInternalCoHomAdjunctionMap = @rec(
   filter_list = [ "category", "object", "object", "morphism" ],
   io_type = [ [ "c", "b", "g" ], [ "i", "c" ] ],
   return_type = "morphism",
@@ -89,7 +89,7 @@ TensorProductToInternalCoHomAdjunctionMap = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom = rec(
+TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom = @rec(
   filter_list = [ "category", "object", "object", "morphism", "object" ],
   io_type = [ [ "c", "b", "g", "i" ], [ "i", "c" ] ],
   return_type = "morphism",
@@ -97,7 +97,7 @@ TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom = rec(
   dual_arguments_reversed = false,
 ),
 
-InternalCoHomToTensorProductAdjunctionMap = rec(
+InternalCoHomToTensorProductAdjunctionMap = @rec(
   filter_list = [ "category", "object", "object", "morphism" ],
   io_type = [ [ "a", "b", "f", ], [ "a", "t" ] ],
   return_type = "morphism",
@@ -107,7 +107,7 @@ InternalCoHomToTensorProductAdjunctionMap = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-InternalCoHomToTensorProductAdjunctionMapWithGivenTensorProduct = rec(
+InternalCoHomToTensorProductAdjunctionMapWithGivenTensorProduct = @rec(
   filter_list = [ "category", "object", "object", "morphism", "object" ],
   io_type = [ [ "a", "b", "f", "t" ], [ "a", "t" ] ],
   return_type = "morphism",
@@ -116,7 +116,7 @@ InternalCoHomToTensorProductAdjunctionMapWithGivenTensorProduct = rec(
   dual_arguments_reversed = false,
 ),
 
-MonoidalPreCoComposeMorphism = rec(
+MonoidalPreCoComposeMorphism = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "a", "b", "c" ], [ "s", "r" ] ],
   output_source_getter_string = "InternalCoHomOnObjects( cat, a, c )",
@@ -130,7 +130,7 @@ MonoidalPreCoComposeMorphism = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-MonoidalPreCoComposeMorphismWithGivenObjects = rec(
+MonoidalPreCoComposeMorphismWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "c", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -138,7 +138,7 @@ MonoidalPreCoComposeMorphismWithGivenObjects = rec(
   dual_arguments_reversed = true,
 ),
 
-MonoidalPostCoComposeMorphism = rec(
+MonoidalPostCoComposeMorphism = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "a", "b", "c" ], [ "s", "r" ] ],
   output_source_getter_string = "InternalCoHomOnObjects( cat, a, c )",
@@ -152,7 +152,7 @@ MonoidalPostCoComposeMorphism = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-MonoidalPostCoComposeMorphismWithGivenObjects = rec(
+MonoidalPostCoComposeMorphismWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "c", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -160,7 +160,7 @@ MonoidalPostCoComposeMorphismWithGivenObjects = rec(
   dual_arguments_reversed = true,
 ),
 
-CoDualOnObjects = rec(
+CoDualOnObjects = @rec(
   filter_list = [ "category", "object" ],
   input_arguments_names = [ "cat", "a" ],
   return_type = "object",
@@ -168,7 +168,7 @@ CoDualOnObjects = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-CoDualOnMorphisms = rec(
+CoDualOnMorphisms = @rec(
   filter_list = [ "category", "morphism" ],
   io_type = [ [ "alpha" ], [ "s", "r" ] ],
   output_source_getter_string = "CoDualOnObjects( cat, Range( alpha ) )",
@@ -181,7 +181,7 @@ CoDualOnMorphisms = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-CoDualOnMorphismsWithGivenCoDuals = rec(
+CoDualOnMorphismsWithGivenCoDuals = @rec(
   filter_list = [ "category", "object", "morphism", "object" ],
   io_type = [ [ "s", "alpha", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -189,7 +189,7 @@ CoDualOnMorphismsWithGivenCoDuals = rec(
   dual_arguments_reversed = true,
 ),
 
-CoclosedEvaluationForCoDual = rec(
+CoclosedEvaluationForCoDual = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorUnit( cat )",
@@ -202,7 +202,7 @@ CoclosedEvaluationForCoDual = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-CoclosedEvaluationForCoDualWithGivenTensorProduct = rec(
+CoclosedEvaluationForCoDualWithGivenTensorProduct = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "s", "a", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -210,7 +210,7 @@ CoclosedEvaluationForCoDualWithGivenTensorProduct = rec(
   dual_arguments_reversed = true,
 ),
 
-MorphismFromCoBidual = rec(
+MorphismFromCoBidual = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "s", "a" ] ],
   output_source_getter_string = "CoDualOnObjects( cat, CoDualOnObjects( cat, a ) )",
@@ -222,7 +222,7 @@ MorphismFromCoBidual = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-MorphismFromCoBidualWithGivenCoBidual = rec(
+MorphismFromCoBidualWithGivenCoBidual = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "s" ], [ "s", "a" ] ],
   return_type = "morphism",
@@ -230,7 +230,7 @@ MorphismFromCoBidualWithGivenCoBidual = rec(
   dual_arguments_reversed = false,
 ),
 
-InternalCoHomTensorProductCompatibilityMorphism = rec(
+InternalCoHomTensorProductCompatibilityMorphism = @rec(
   filter_list = [ "category", "list_of_objects" ],
   input_arguments_names = [ "cat", "list" ],
   output_source_getter_string = "InternalCoHomOnObjects( cat, TensorProductOnObjects( cat, list[1], list[2] ), TensorProductOnObjects( cat, list[3], list[4] ) )",
@@ -245,7 +245,7 @@ InternalCoHomTensorProductCompatibilityMorphism = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects = rec(
+InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects = @rec(
   filter_list = [ "category", "object", "list_of_objects", "object" ],
   input_arguments_names = [ "cat", "source", "list", "range" ],
   output_source_getter_string = "source",
@@ -257,7 +257,7 @@ InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects = rec(
   dual_arguments_reversed = false,
 ),
 
-CoDualityTensorProductCompatibilityMorphism = rec(
+CoDualityTensorProductCompatibilityMorphism = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "s", "r" ] ],
   output_source_getter_string = "CoDualOnObjects( cat, TensorProductOnObjects( cat, a, b ) )",
@@ -271,7 +271,7 @@ CoDualityTensorProductCompatibilityMorphism = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-CoDualityTensorProductCompatibilityMorphismWithGivenObjects = rec(
+CoDualityTensorProductCompatibilityMorphismWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -279,7 +279,7 @@ CoDualityTensorProductCompatibilityMorphismWithGivenObjects = rec(
   dual_with_given_objects_reversed = true,
 ),
 
-MorphismFromInternalCoHomToTensorProduct = rec(
+MorphismFromInternalCoHomToTensorProduct = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "s", "r" ] ],
   output_source_getter_string = "InternalCoHomOnObjects( cat, a, b )",
@@ -293,7 +293,7 @@ MorphismFromInternalCoHomToTensorProduct = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-MorphismFromInternalCoHomToTensorProductWithGivenObjects = rec(
+MorphismFromInternalCoHomToTensorProductWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -301,7 +301,7 @@ MorphismFromInternalCoHomToTensorProductWithGivenObjects = rec(
   dual_arguments_reversed = true,
 ),
 
-IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit = rec(
+IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "d", "i" ] ],
   output_source_getter_string = "CoDualOnObjects( cat, a )",
@@ -313,7 +313,7 @@ IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject = rec(
+IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "i", "d" ] ],
   output_source_getter_string = "InternalCoHomOnObjects( cat, TensorUnit( cat ), a )",
@@ -325,7 +325,7 @@ IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-UniversalPropertyOfCoDual = rec(
+UniversalPropertyOfCoDual = @rec(
   filter_list = [ "category", "object", "object", "morphism" ],
   io_type = [ [ "t", "a", "alpha" ], [ "d", "t" ] ],
   return_type = "morphism",
@@ -334,7 +334,7 @@ UniversalPropertyOfCoDual = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-CoLambdaIntroduction = rec(
+CoLambdaIntroduction = @rec(
   filter_list = [ "category", "morphism" ],
   io_type = [ [ "alpha" ], [ "u", "i" ] ],
   return_type = "morphism",
@@ -342,7 +342,7 @@ CoLambdaIntroduction = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-CoLambdaElimination = rec(
+CoLambdaElimination = @rec(
   filter_list = [ "category", "object", "object", "morphism" ],
   io_type = [ [ "a", "b", "alpha" ], [ "a", "b" ] ],
   return_type = "morphism",
@@ -352,7 +352,7 @@ CoLambdaElimination = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-IsomorphismFromObjectToInternalCoHom = rec(
+IsomorphismFromObjectToInternalCoHom = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "a", "r" ] ],
   output_source_getter_string = "a",
@@ -364,7 +364,7 @@ IsomorphismFromObjectToInternalCoHom = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-IsomorphismFromObjectToInternalCoHomWithGivenInternalCoHom = rec(
+IsomorphismFromObjectToInternalCoHomWithGivenInternalCoHom = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "r" ], [ "a", "r" ] ],
   return_type = "morphism",
@@ -372,7 +372,7 @@ IsomorphismFromObjectToInternalCoHomWithGivenInternalCoHom = rec(
   dual_arguments_reversed = false,
 ),
 
-IsomorphismFromInternalCoHomToObject = rec(
+IsomorphismFromInternalCoHomToObject = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "s", "a" ] ],
   output_source_getter_string = "InternalCoHomOnObjects( cat, a, TensorUnit( cat ) )",
@@ -384,7 +384,7 @@ IsomorphismFromInternalCoHomToObject = rec(
   # Test ⥉ CoclosedMonoidalCategoriesTest
 ),
 
-IsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom = rec(
+IsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "s" ], [ "s", "a" ] ],
   return_type = "morphism",
@@ -395,7 +395,7 @@ IsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom = rec(
 ) );
 
 # collect closed && coclosed operations
-@BindGlobal( "CLOSED_AND_COCLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD", rec( ) );
+@BindGlobal( "CLOSED_AND_COCLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD", @rec( ) );
 
 Perform( RecNames( CLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD ), function ( name )
     

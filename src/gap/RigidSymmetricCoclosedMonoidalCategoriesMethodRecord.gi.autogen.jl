@@ -4,9 +4,9 @@
 # Implementations
 #
 
-@InstallValueConst( RIGID_SYMMETRIC_COCLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, rec(
+@InstallValueConst( RIGID_SYMMETRIC_COCLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, @rec(
 
-CoclosedCoevaluationForCoDual = rec(
+CoclosedCoevaluationForCoDual = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, a, CoDualOnObjects( cat, a ) )",
@@ -19,7 +19,7 @@ CoclosedCoevaluationForCoDual = rec(
   # Test ⥉ RigidSymmetricCoclosedMonoidalCategoriesTest
 ),
 
-CoclosedCoevaluationForCoDualWithGivenTensorProduct = rec(
+CoclosedCoevaluationForCoDualWithGivenTensorProduct = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   io_type = [ [ "s", "a", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -27,7 +27,7 @@ CoclosedCoevaluationForCoDualWithGivenTensorProduct = rec(
   dual_arguments_reversed = true,
 ),
 
-MorphismToCoBidual = rec(
+MorphismToCoBidual = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "a", "r" ] ],
   output_source_getter_string = "a",
@@ -39,7 +39,7 @@ MorphismToCoBidual = rec(
   # Test ⥉ RigidSymmetricCoclosedMonoidalCategoriesTest
 ),
 
-MorphismToCoBidualWithGivenCoBidual = rec(
+MorphismToCoBidualWithGivenCoBidual = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "r" ], [ "a", "r" ] ],
   return_type = "morphism",
@@ -47,7 +47,7 @@ MorphismToCoBidualWithGivenCoBidual = rec(
   dual_arguments_reversed = false,
 ),
 
-InternalCoHomTensorProductCompatibilityMorphismInverse = rec(
+InternalCoHomTensorProductCompatibilityMorphismInverse = @rec(
   filter_list = [ "category", "list_of_objects" ],
   input_arguments_names = [ "cat", "list" ],
   output_source_getter_string = "TensorProductOnObjects( cat, InternalCoHomOnObjects( cat, list[1], list[3] ), InternalCoHomOnObjects( cat, list[2], list[4] ) )",
@@ -63,7 +63,7 @@ InternalCoHomTensorProductCompatibilityMorphismInverse = rec(
   # Test ⥉ RigidSymmetricCoclosedMonoidalCategoriesTest
 ),
 
-InternalCoHomTensorProductCompatibilityMorphismInverseWithGivenObjects = rec(
+InternalCoHomTensorProductCompatibilityMorphismInverseWithGivenObjects = @rec(
   filter_list = [ "category", "object", "list_of_objects", "object" ],
   input_arguments_names = [ "cat", "source", "list", "range" ],
   output_source_getter_string = "source",
@@ -75,7 +75,7 @@ InternalCoHomTensorProductCompatibilityMorphismInverseWithGivenObjects = rec(
   dual_arguments_reversed = false,
 ),
 
-MorphismFromTensorProductToInternalCoHom = rec(
+MorphismFromTensorProductToInternalCoHom = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "s", "r" ] ],
   output_source_getter_string = "TensorProductOnObjects( cat, CoDualOnObjects( cat, a ), b  )",
@@ -89,7 +89,7 @@ MorphismFromTensorProductToInternalCoHom = rec(
   # Test ⥉ RigidSymmetricCoclosedMonoidalCategoriesTest
 ),
 
-MorphismFromTensorProductToInternalCoHomWithGivenObjects = rec(
+MorphismFromTensorProductToInternalCoHomWithGivenObjects = @rec(
   filter_list = [ "category", "object", "object", "object", "object" ],
   io_type = [ [ "s", "a", "b", "r" ], [ "s", "r" ] ],
   return_type = "morphism",
@@ -97,7 +97,7 @@ MorphismFromTensorProductToInternalCoHomWithGivenObjects = rec(
   dual_with_given_objects_reversed = true,
 ),
 
-CoTraceMap = rec(
+CoTraceMap = @rec(
   filter_list = [ "category", "morphism" ],
   io_type = [ [ "alpha" ], [ "u", "u" ] ],
   return_type = "morphism",
@@ -105,7 +105,7 @@ CoTraceMap = rec(
   # Test ⥉ RigidSymmetricCoclosedMonoidalCategoriesTest
 ),
 
-CoRankMorphism = rec(
+CoRankMorphism = @rec(
   filter_list = [ "category", "object" ],
   io_type = [ [ "a" ], [ "u", "u" ] ],
   return_type = "morphism",
@@ -113,7 +113,7 @@ CoRankMorphism = rec(
   # Test ⥉ RigidSymmetricCoclosedMonoidalCategoriesTest
 ),
 
-IsomorphismFromInternalCoHomToTensorProductWithCoDualObject = rec(
+IsomorphismFromInternalCoHomToTensorProductWithCoDualObject = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "i", "t" ] ],
   return_type = "morphism",
@@ -122,7 +122,7 @@ IsomorphismFromInternalCoHomToTensorProductWithCoDualObject = rec(
   # Test ⥉ RigidSymmetricCoclosedMonoidalCategoriesTest
 ),
 
-IsomorphismFromTensorProductWithCoDualObjectToInternalCoHom = rec(
+IsomorphismFromTensorProductWithCoDualObjectToInternalCoHom = @rec(
   filter_list = [ "category", "object", "object" ],
   io_type = [ [ "a", "b" ], [ "t", "i" ] ],
   return_type = "morphism",
@@ -134,7 +134,7 @@ IsomorphismFromTensorProductWithCoDualObjectToInternalCoHom = rec(
 ) );
 
 # collect closed && coclosed operations
-@BindGlobal( "RIGID_SYMMETRIC_CLOSED_AND_COCLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD", rec( ) );
+@BindGlobal( "RIGID_SYMMETRIC_CLOSED_AND_COCLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD", @rec( ) );
 
 Perform( RecNames( RIGID_SYMMETRIC_CLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD ), function ( name )
 

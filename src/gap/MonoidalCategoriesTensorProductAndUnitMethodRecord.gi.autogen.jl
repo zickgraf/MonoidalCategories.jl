@@ -4,9 +4,9 @@
 # Implementations
 #
 
-@InstallValueConst( MONOIDAL_CATEGORIES_BASIC_METHOD_NAME_RECORD, rec(
+@InstallValueConst( MONOIDAL_CATEGORIES_BASIC_METHOD_NAME_RECORD, @rec(
 
-TensorProductOnObjects = rec(
+TensorProductOnObjects = @rec(
   filter_list = [ "category", "object", "object" ],
   return_type = "object",
   dual_operation = "TensorProductOnObjects",
@@ -14,7 +14,7 @@ TensorProductOnObjects = rec(
   # Test ⥉ MonoidalCategoriesTensorProductAndUnitTest
 ),
 
-TensorUnit = rec(
+TensorUnit = @rec(
   filter_list = [ "category" ],
   return_type = "object",
   dual_operation = "TensorUnit",
