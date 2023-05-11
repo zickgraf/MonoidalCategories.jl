@@ -117,7 +117,7 @@ end );
                       "\n\n" );
     for file in files
         if !IsBound( files_rec[file] )
-            Info( InfoWarning, 1, "the component ", file, " is !bound ⥉ the record 'files_rec'" );
+            @Info( InfoWarning, 1, "the component ", file, " is !bound ⥉ the record 'files_rec'" );
         elseif IsString( files_rec[file] )
             source = @Concatenation( dir, ReplacedString( file, "_", "." ) );
             target = @Concatenation( PackageInfo( package_name )[1].InstallationPath, "/gap/", files_rec[file] );
