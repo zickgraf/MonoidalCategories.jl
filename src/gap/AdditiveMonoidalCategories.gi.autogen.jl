@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
 
 ##
 AddDerivationToCAP( LeftDistributivityExpanding,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ TensorProductOnObjects, 1 ],
                       [ DirectSum, 1 ],
                       [ LeftDistributivityExpandingWithGivenObjects, 1 ] ],
@@ -26,7 +26,7 @@ end; CategoryFilter = IsSkeletalCategory );
 
 ##
 AddDerivationToCAP( LeftDistributivityFactoring,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ TensorProductOnObjects, 1 ],
                       [ DirectSum, 1 ],
                       [ LeftDistributivityFactoringWithGivenObjects, 1 ] ],
@@ -46,7 +46,7 @@ end; CategoryFilter = IsSkeletalCategory );
 
 ##
 AddDerivationToCAP( RightDistributivityExpanding,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ TensorProductOnObjects, 1 ],
                       [ DirectSum, 1 ],
                       [ RightDistributivityExpandingWithGivenObjects, 1 ] ],
@@ -66,7 +66,7 @@ end; CategoryFilter = IsSkeletalCategory );
 
 ##
 AddDerivationToCAP( RightDistributivityFactoring,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ TensorProductOnObjects, 1 ],
                       [ DirectSum, 1 ],
                       [ RightDistributivityFactoringWithGivenObjects, 1 ] ],

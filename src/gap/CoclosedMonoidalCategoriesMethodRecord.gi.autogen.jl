@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -12,7 +12,7 @@ InternalCoHomOnObjects = @rec(
   return_type = "object",
   dual_operation = "InternalHomOnObjects",
   dual_arguments_reversed = true,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 InternalCoHomOnMorphisms = @rec(
@@ -26,7 +26,7 @@ InternalCoHomOnMorphisms = @rec(
   return_type = "morphism",
   dual_operation = "InternalHomOnMorphisms",
   dual_arguments_reversed = true,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 InternalCoHomOnMorphismsWithGivenInternalCoHoms = @rec(
@@ -47,7 +47,7 @@ CoclosedEvaluationMorphism = @rec(
   return_type = "morphism",
   dual_operation = "EvaluationMorphism",
   dual_arguments_reversed = true,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 CoclosedEvaluationMorphismWithGivenRange = @rec(
@@ -69,7 +69,7 @@ CoclosedCoevaluationMorphism = @rec(
   return_type = "morphism",
   dual_operation = "CoevaluationMorphism",
   dual_arguments_reversed = false,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 CoclosedCoevaluationMorphismWithGivenSource = @rec(
@@ -86,7 +86,7 @@ TensorProductToInternalCoHomAdjunctionMap = @rec(
   return_type = "morphism",
   dual_operation = "TensorProductToInternalHomAdjunctionMap",
   dual_arguments_reversed = false,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom = @rec(
@@ -104,7 +104,7 @@ InternalCoHomToTensorProductAdjunctionMap = @rec(
   dual_operation = "InternalHomToTensorProductAdjunctionMap",
   dual_preprocessor_func = ( cat, a, b, f ) -> NTupleGAP( 4, Opposite( cat ), Opposite( b ), Opposite( a ), Opposite( f ) ),
   dual_arguments_reversed = false,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 InternalCoHomToTensorProductAdjunctionMapWithGivenTensorProduct = @rec(
@@ -127,7 +127,7 @@ MonoidalPreCoComposeMorphism = @rec(
   return_type = "morphism",
   dual_operation = "MonoidalPreComposeMorphism",
   dual_arguments_reversed = true,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 MonoidalPreCoComposeMorphismWithGivenObjects = @rec(
@@ -149,7 +149,7 @@ MonoidalPostCoComposeMorphism = @rec(
   return_type = "morphism",
   dual_operation = "MonoidalPostComposeMorphism",
   dual_arguments_reversed = true,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 MonoidalPostCoComposeMorphismWithGivenObjects = @rec(
@@ -165,7 +165,7 @@ CoDualOnObjects = @rec(
   input_arguments_names = [ "cat", "a" ],
   return_type = "object",
   dual_operation = "DualOnObjects",
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 CoDualOnMorphisms = @rec(
@@ -178,7 +178,7 @@ CoDualOnMorphisms = @rec(
   with_given_object_position = "both",
   return_type = "morphism",
   dual_operation = "DualOnMorphisms",
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 CoDualOnMorphismsWithGivenCoDuals = @rec(
@@ -199,7 +199,7 @@ CoclosedEvaluationForCoDual = @rec(
   with_given_object_position = "both",
   return_type = "morphism",
   dual_operation = "EvaluationForDual",
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 CoclosedEvaluationForCoDualWithGivenTensorProduct = @rec(
@@ -219,7 +219,7 @@ MorphismFromCoBidual = @rec(
   with_given_object_position = "Source",
   return_type = "morphism",
   dual_operation = "MorphismToBidual",
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 MorphismFromCoBidualWithGivenCoBidual = @rec(
@@ -242,7 +242,7 @@ InternalCoHomTensorProductCompatibilityMorphism = @rec(
   dual_operation = "TensorProductInternalHomCompatibilityMorphism",
   dual_preprocessor_func = ( cat, list ) -> PairGAP( Opposite( cat ), [ Opposite( list[3] ), Opposite( list[1] ), Opposite( list[4] ), Opposite( list[2] ) ] ),
   dual_arguments_reversed = false,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects = @rec(
@@ -268,7 +268,7 @@ CoDualityTensorProductCompatibilityMorphism = @rec(
   return_type = "morphism",
   dual_operation = "TensorProductDualityCompatibilityMorphism",
   dual_arguments_reversed = false,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 CoDualityTensorProductCompatibilityMorphismWithGivenObjects = @rec(
@@ -290,7 +290,7 @@ MorphismFromInternalCoHomToTensorProduct = @rec(
   return_type = "morphism",
   dual_operation = "MorphismFromTensorProductToInternalHom",
   dual_arguments_reversed = true,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 MorphismFromInternalCoHomToTensorProductWithGivenObjects = @rec(
@@ -310,7 +310,7 @@ IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit = @rec(
   output_range_getter_preconditions = [ [ "InternalCoHomOnObjects", 1 ], [ "TensorUnit", 1 ] ],
   return_type = "morphism",
   dual_operation = "IsomorphismFromInternalHomIntoTensorUnitToDualObject",
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject = @rec(
@@ -322,7 +322,7 @@ IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject = @rec(
   output_range_getter_preconditions = [ [ "CoDualOnObjects", 1 ] ],
   return_type = "morphism",
   dual_operation = "IsomorphismFromDualObjectToInternalHomIntoTensorUnit",
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 UniversalPropertyOfCoDual = @rec(
@@ -331,7 +331,7 @@ UniversalPropertyOfCoDual = @rec(
   return_type = "morphism",
   dual_operation = "UniversalPropertyOfDual",
   dual_arguments_reversed = false,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 CoLambdaIntroduction = @rec(
@@ -339,7 +339,7 @@ CoLambdaIntroduction = @rec(
   io_type = [ [ "alpha" ], [ "u", "i" ] ],
   return_type = "morphism",
   dual_operation = "LambdaIntroduction",
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 CoLambdaElimination = @rec(
@@ -349,7 +349,7 @@ CoLambdaElimination = @rec(
   dual_operation = "LambdaElimination",
   dual_preprocessor_func = ( cat, a, b, alpha ) -> NTupleGAP( 4, Opposite( cat ), Opposite( b ), Opposite( a ), Opposite( alpha ) ),
   dual_arguments_reversed = false,
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 IsomorphismFromObjectToInternalCoHom = @rec(
@@ -361,7 +361,7 @@ IsomorphismFromObjectToInternalCoHom = @rec(
   with_given_object_position = "Range",
   return_type = "morphism",
   dual_operation = "IsomorphismFromInternalHomToObject",
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 IsomorphismFromObjectToInternalCoHomWithGivenInternalCoHom = @rec(
@@ -381,7 +381,7 @@ IsomorphismFromInternalCoHomToObject = @rec(
   with_given_object_position = "Source",
   return_type = "morphism",
   dual_operation = "IsomorphismFromObjectToInternalHom",
-  # Test ⥉ CoclosedMonoidalCategoriesTest
+  # Test in CoclosedMonoidalCategoriesTest
 ),
 
 IsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom = @rec(
@@ -394,7 +394,7 @@ IsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom = @rec(
 
 ) );
 
-# collect closed && coclosed operations
+# collect closed and coclosed operations
 @BindGlobal( "CLOSED_AND_COCLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD", @rec( ) );
 
 Perform( RecNames( CLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD ), function ( name )

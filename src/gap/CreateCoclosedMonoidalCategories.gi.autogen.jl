@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -50,7 +50,7 @@
     
     for name in L
         if !@IsBound( key_val_rec[name] )
-            Error( "the component with the name ", name, " is missing ⥉ the given key_value_record record\n" );
+            Error( "the component with the name ", name, " is missing in the given key_value_record record\n" );
         end;
     end;
     
@@ -117,7 +117,7 @@ end );
     
     for file in files
         if !@IsBound( files_rec[file] )
-            @Info( InfoWarning, 1, "the component ", file, " is !bound ⥉ the record 'files_rec'" );
+            @Info( InfoWarning, 1, "the component ", file, " is not bound in the record 'files_rec'" );
         elseif IsString( files_rec[file] )
             source = @Concatenation( dir, ReplacedString( file, "_", "." ) );
             target = @Concatenation( PackageInfo( package_name )[1].InstallationPath, "/gap/", files_rec[file] );

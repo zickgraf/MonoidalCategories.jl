@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -16,7 +16,7 @@ CoevaluationForDual = @rec(
   with_given_object_position = "both",
   return_type = "morphism",
   dual_operation = "CoclosedCoevaluationForCoDual",
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
+  # Test in RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 CoevaluationForDualWithGivenTensorProduct = @rec(
@@ -36,7 +36,7 @@ MorphismFromBidual = @rec(
   with_given_object_position = "Source",
   return_type = "morphism",
   dual_operation = "MorphismToCoBidual",
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
+  # Test in RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 MorphismFromBidualWithGivenBidual = @rec(
@@ -60,7 +60,7 @@ TensorProductInternalHomCompatibilityMorphismInverse = @rec(
   dual_preprocessor_func =
     ( cat, list ) -> PairGAP( Opposite( cat ), [ Opposite( list[2] ), Opposite( list[4] ), Opposite( list[1] ), Opposite( list[3] ) ] ),
   dual_arguments_reversed = false,
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
+  # Test in RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 TensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects = @rec(
@@ -86,7 +86,7 @@ MorphismFromInternalHomToTensorProduct = @rec(
   return_type = "morphism",
   dual_operation = "MorphismFromTensorProductToInternalCoHom",
   dual_arguments_reversed = false,
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
+  # Test in RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 MorphismFromInternalHomToTensorProductWithGivenObjects = @rec(
@@ -102,7 +102,7 @@ TraceMap = @rec(
   io_type = [ [ "alpha" ], [ "u", "u" ] ],
   return_type = "morphism",
   dual_operation = "CoTraceMap",
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
+  # Test in RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 RankMorphism = @rec(
@@ -110,7 +110,7 @@ RankMorphism = @rec(
   io_type = [ [ "a" ], [ "u", "u" ] ],
   return_type = "morphism",
   dual_operation = "CoRankMorphism",
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
+  # Test in RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 IsomorphismFromTensorProductWithDualObjectToInternalHom = @rec(
@@ -119,7 +119,7 @@ IsomorphismFromTensorProductWithDualObjectToInternalHom = @rec(
   return_type = "morphism",
   dual_operation = "IsomorphismFromInternalCoHomToTensorProductWithCoDualObject",
   dual_arguments_reversed = true,
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
+  # Test in RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 IsomorphismFromInternalHomToTensorProductWithDualObject = @rec(
@@ -128,7 +128,7 @@ IsomorphismFromInternalHomToTensorProductWithDualObject = @rec(
   return_type = "morphism",
   dual_operation = "IsomorphismFromTensorProductWithCoDualObjectToInternalCoHom",
   dual_arguments_reversed = false,
-  # Test ⥉ RigidSymmetricClosedMonoidalCategoriesTest
+  # Test in RigidSymmetricClosedMonoidalCategoriesTest
 ),
 
 ) );

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Declarations
 #
@@ -31,7 +31,7 @@ DeclareGlobalVariable( "MONOIDAL_CATEGORIES_BASIC_METHOD_NAME_RECORD" );
                   [ IsCapCategoryObject, IsCapCategoryObject ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$ 
 #! to the category for the basic operation <C>TensorProductOnObjects</C>.
 #! $F: (a,b) \mapsto a \otimes b$.
@@ -59,7 +59,7 @@ DeclareGlobalVariable( "MONOIDAL_CATEGORIES_BASIC_METHOD_NAME_RECORD" );
                   IsCapCategory );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$ 
 #! to the category for the basic operation <C>TensorUnit</C>.
 #! $F: ( ) \mapsto 1$.

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -11,14 +11,14 @@ TensorProductOnObjects = @rec(
   return_type = "object",
   dual_operation = "TensorProductOnObjects",
   dual_arguments_reversed = false,
-  # Test ⥉ MonoidalCategoriesTensorProductAndUnitTest
+  # Test in MonoidalCategoriesTensorProductAndUnitTest
 ),
 
 TensorUnit = @rec(
   filter_list = [ "category" ],
   return_type = "object",
   dual_operation = "TensorUnit",
-  # Test ⥉ MonoidalCategoriesTensorProductAndUnitTest
+  # Test in MonoidalCategoriesTensorProductAndUnitTest
 ),
 
 ) );

@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
 
 ##
 AddDerivationToCAP( Braiding,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ TensorProductOnObjects, 1 ],
                       [ BraidingWithGivenTensorProducts, 1 ] ],
                     
@@ -21,7 +21,7 @@ end; CategoryFilter = IsSkeletalCategory );
 
 ##
 AddDerivationToCAP( BraidingInverse,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ TensorProductOnObjects, 1 ],
                       [ BraidingInverseWithGivenTensorProducts, 1 ] ],
                     

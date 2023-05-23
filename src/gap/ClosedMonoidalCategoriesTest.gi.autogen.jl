@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -108,7 +108,7 @@
             @Assert( 0, IsEqualForObjects( hom_ab, Opposite( cohom_ba_op ) ) );
             @Assert( 0, IsEqualForObjects( hom_ba, Opposite( cohom_ab_op ) ) );
             
-            # Convenience methods ⥉ the opposite category
+            # Convenience methods in the opposite category
             
             @Assert( 0, IsEqualForObjects( cohom_ab_op, InternalCoHom( a_op, b_op ) ) );
             @Assert( 0, IsEqualForObjects( cohom_ba_op, InternalCoHom( b_op, a_op ) ) );
@@ -138,7 +138,7 @@
             @Assert( 0, IsCongruentForMorphisms( hom_alpha_beta, Opposite( cohom_beta_alpha_op ) ) );
             @Assert( 0, IsCongruentForMorphisms( hom_beta_alpha, Opposite( cohom_alpha_beta_op ) ) );
             
-            # Convenience methods ⥉ the opposite category
+            # Convenience methods in the opposite category
             
             @Assert( 0, IsCongruentForMorphisms( cohom_alpha_beta_op, InternalCoHom( alpha_op, beta_op ) ) );
             @Assert( 0, IsCongruentForMorphisms( cohom_beta_alpha_op, InternalCoHom( beta_op, alpha_op ) ) );
@@ -638,7 +638,7 @@
             if verbose
                 
                 # COVERAGE_IGNORE_NEXT_LINE
-                Display( "Consistency between 'EvalutionMorphism' && 'AdjunctionMap' ..." );
+                Display( "Consistency between 'EvalutionMorphism' and 'AdjunctionMap' ..." );
                 
             end;
             
@@ -668,7 +668,7 @@
             if verbose
                 
                 # COVERAGE_IGNORE_NEXT_LINE
-                Display( "Consistency between 'CoevalutionMorphism' && 'AdjunctionMap' ..." );
+                Display( "Consistency between 'CoevalutionMorphism' and 'AdjunctionMap' ..." );
                 
             end;
             

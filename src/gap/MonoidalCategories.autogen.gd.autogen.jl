@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Declarations
 #
@@ -10,7 +10,7 @@
 #! @Section Add-methods
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `AssociatorLeftToRight`.
 #! $F: ( a, b, c ) \mapsto \mathtt[AssociatorLeftToRight](a, b, c)$.
@@ -29,7 +29,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `AssociatorLeftToRightWithGivenTensorProducts`.
 #! $F: ( s, a, b, c, r ) \mapsto \mathtt[AssociatorLeftToRightWithGivenTensorProducts](s, a, b, c, r)$.
@@ -48,7 +48,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `AssociatorRightToLeft`.
 #! $F: ( a, b, c ) \mapsto \mathtt[AssociatorRightToLeft](a, b, c)$.
@@ -67,7 +67,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `AssociatorRightToLeftWithGivenTensorProducts`.
 #! $F: ( s, a, b, c, r ) \mapsto \mathtt[AssociatorRightToLeftWithGivenTensorProducts](s, a, b, c, r)$.
@@ -86,7 +86,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `LeftUnitor`.
 #! $F: ( a ) \mapsto \mathtt[LeftUnitor](a)$.
@@ -105,7 +105,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `LeftUnitorInverse`.
 #! $F: ( a ) \mapsto \mathtt[LeftUnitorInverse](a)$.
@@ -124,7 +124,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `LeftUnitorInverseWithGivenTensorProduct`.
 #! $F: ( a, r ) \mapsto \mathtt[LeftUnitorInverseWithGivenTensorProduct](a, r)$.
@@ -143,7 +143,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `LeftUnitorWithGivenTensorProduct`.
 #! $F: ( a, s ) \mapsto \mathtt[LeftUnitorWithGivenTensorProduct](a, s)$.
@@ -162,7 +162,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `RightUnitor`.
 #! $F: ( a ) \mapsto \mathtt[RightUnitor](a)$.
@@ -181,7 +181,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `RightUnitorInverse`.
 #! $F: ( a ) \mapsto \mathtt[RightUnitorInverse](a)$.
@@ -200,7 +200,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `RightUnitorInverseWithGivenTensorProduct`.
 #! $F: ( a, r ) \mapsto \mathtt[RightUnitorInverseWithGivenTensorProduct](a, r)$.
@@ -219,7 +219,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `RightUnitorWithGivenTensorProduct`.
 #! $F: ( a, s ) \mapsto \mathtt[RightUnitorWithGivenTensorProduct](a, s)$.
@@ -238,7 +238,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `TensorProductOnMorphisms`.
 #! $F: ( alpha, beta ) \mapsto \mathtt[TensorProductOnMorphisms](alpha, beta)$.
@@ -257,7 +257,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `TensorProductOnMorphismsWithGivenTensorProducts`.
 #! $F: ( s, alpha, beta, r ) \mapsto \mathtt[TensorProductOnMorphismsWithGivenTensorProducts](s, alpha, beta, r)$.

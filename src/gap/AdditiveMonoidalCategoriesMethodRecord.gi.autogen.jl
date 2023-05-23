@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -17,7 +17,7 @@ LeftDistributivityExpanding = @rec(
   return_type = "morphism",
   dual_operation = "LeftDistributivityFactoring",
   dual_arguments_reversed = false,
-  # Test ⥉ AdditiveMonoidalCategoriesTest
+  # Test in AdditiveMonoidalCategoriesTest
 ),
 
 LeftDistributivityExpandingWithGivenObjects = @rec(
@@ -39,7 +39,7 @@ LeftDistributivityFactoring = @rec(
   return_type = "morphism",
   dual_operation = "LeftDistributivityExpanding",
   dual_arguments_reversed = false,
-  # Test ⥉ AdditiveMonoidalCategoriesTest
+  # Test in AdditiveMonoidalCategoriesTest
 ),
 
 LeftDistributivityFactoringWithGivenObjects = @rec(
@@ -61,7 +61,7 @@ RightDistributivityExpanding = @rec(
   return_type = "morphism",
   dual_operation = "RightDistributivityFactoring",
   dual_arguments_reversed = false,
-  # Test ⥉ AdditiveMonoidalCategoriesTest
+  # Test in AdditiveMonoidalCategoriesTest
 ),
 
 RightDistributivityExpandingWithGivenObjects = @rec(
@@ -83,7 +83,7 @@ RightDistributivityFactoring = @rec(
   return_type = "morphism",
   dual_operation = "RightDistributivityExpanding",
   dual_arguments_reversed = false,
-  # Test ⥉ AdditiveMonoidalCategoriesTest
+  # Test in AdditiveMonoidalCategoriesTest
 ),
 
 RightDistributivityFactoringWithGivenObjects = @rec(

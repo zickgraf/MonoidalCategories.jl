@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
 
 ##
 AddDerivationToCAP( IsomorphismFromInternalHomToObject,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ IsomorphismFromInternalHomToObjectWithGivenInternalHom, 1 ] ],
                     
   function( cat, object )
@@ -17,7 +17,7 @@ end; CategoryFilter = IsSkeletalCategory );
 
 ##
 AddDerivationToCAP( IsomorphismFromObjectToInternalHom,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ IsomorphismFromObjectToInternalHomWithGivenInternalHom, 1 ] ],
                     
   function( cat, object )

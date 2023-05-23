@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Declarations
 #
@@ -10,7 +10,7 @@
 #! @Section Add-methods
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `LeftDistributivityExpanding`.
 #! $F: ( a, L ) \mapsto \mathtt[LeftDistributivityExpanding](a, L)$.
@@ -29,7 +29,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `LeftDistributivityExpandingWithGivenObjects`.
 #! $F: ( s, a, L, r ) \mapsto \mathtt[LeftDistributivityExpandingWithGivenObjects](s, a, L, r)$.
@@ -48,7 +48,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `LeftDistributivityFactoring`.
 #! $F: ( a, L ) \mapsto \mathtt[LeftDistributivityFactoring](a, L)$.
@@ -67,7 +67,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `LeftDistributivityFactoringWithGivenObjects`.
 #! $F: ( s, a, L, r ) \mapsto \mathtt[LeftDistributivityFactoringWithGivenObjects](s, a, L, r)$.
@@ -86,7 +86,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `RightDistributivityExpanding`.
 #! $F: ( L, a ) \mapsto \mathtt[RightDistributivityExpanding](L, a)$.
@@ -105,7 +105,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `RightDistributivityExpandingWithGivenObjects`.
 #! $F: ( s, L, a, r ) \mapsto \mathtt[RightDistributivityExpandingWithGivenObjects](s, L, a, r)$.
@@ -124,7 +124,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `RightDistributivityFactoring`.
 #! $F: ( L, a ) \mapsto \mathtt[RightDistributivityFactoring](L, a)$.
@@ -143,7 +143,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `RightDistributivityFactoringWithGivenObjects`.
 #! $F: ( s, L, a, r ) \mapsto \mathtt[RightDistributivityFactoringWithGivenObjects](s, L, a, r)$.

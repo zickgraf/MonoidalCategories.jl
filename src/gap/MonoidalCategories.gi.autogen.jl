@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -8,7 +8,7 @@ InstallTrueMethod( IsMonoidalCategory, IsStrictMonoidalCategory );
 
 ##
 AddDerivationToCAP( AssociatorRightToLeft,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ TensorProductOnObjects, 2 ],
                       [ AssociatorRightToLeftWithGivenTensorProducts, 1 ] ],
                     
@@ -27,7 +27,7 @@ end; CategoryFilter = IsSkeletalCategory );
 
 ##
 AddDerivationToCAP( AssociatorLeftToRight,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ TensorProductOnObjects, 2 ],
                       [ AssociatorLeftToRightWithGivenTensorProducts, 1 ] ],
                     
@@ -46,7 +46,7 @@ end; CategoryFilter = IsSkeletalCategory );
 
 ##
 AddDerivationToCAP( LeftUnitor,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ LeftUnitorWithGivenTensorProduct, 1 ] ],
                     
   function( cat, object )
@@ -57,7 +57,7 @@ end; CategoryFilter = IsSkeletalCategory );
 
 ##
 AddDerivationToCAP( LeftUnitorInverse,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ LeftUnitorInverseWithGivenTensorProduct, 1 ] ],
                     
   function( cat, object )
@@ -68,7 +68,7 @@ end; CategoryFilter = IsSkeletalCategory );
 
 ##
 AddDerivationToCAP( RightUnitor,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ RightUnitorWithGivenTensorProduct, 1 ] ],
                     
   function( cat, object )
@@ -79,7 +79,7 @@ end; CategoryFilter = IsSkeletalCategory );
 
 ##
 AddDerivationToCAP( RightUnitorInverse,
-                    "calling the WithGiven operation ⥉ a skeletal setting",
+                    "calling the WithGiven operation in a skeletal setting",
                     [ [ RightUnitorInverseWithGivenTensorProduct, 1 ] ],
                     
   function( cat, object )

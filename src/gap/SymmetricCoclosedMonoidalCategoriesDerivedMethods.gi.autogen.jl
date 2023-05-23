@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
 
 ##
 AddDerivationToCAP( TensorProductToInternalCoHomAdjunctionMap,
-                    "TensorProductToInternalCoHomAdjunctionMap using CoclosedCoevaluationMorphism && InternalCoHom",
+                    "TensorProductToInternalCoHomAdjunctionMap using CoclosedCoevaluationMorphism and InternalCoHom",
                     [ [ PreCompose, 1 ],
                       [ InternalCoHomOnMorphisms, 1 ],
                       [ IdentityMorphism, 1 ],
@@ -34,7 +34,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom,
-                    "TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom using CoclosedCoevaluationMorphism && InternalCoHom",
+                    "TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom using CoclosedCoevaluationMorphism and InternalCoHom",
                     [ [ CoclosedCoevaluationMorphism, 1 ],
                       [ PreCompose, 1 ],
                       [ InternalCoHomOnMorphismsWithGivenInternalCoHoms, 1 ],
@@ -65,7 +65,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( InternalCoHomToTensorProductAdjunctionMap,
-                    "InternalCoHomToTensorProductAdjunctionMap using TensorProductOnMorphisms && CoclosedEvaluationMorphism",
+                    "InternalCoHomToTensorProductAdjunctionMap using TensorProductOnMorphisms and CoclosedEvaluationMorphism",
                     [ [ PreCompose, 1 ],
                       [ CoclosedEvaluationMorphism, 1 ],
                       [ TensorProductOnMorphisms, 1 ],
@@ -112,7 +112,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( MorphismFromCoBidualWithGivenCoBidual,
-                    "MorphismFromCoBidualWithGivenCoBidual using the braiding && the universal property of the codual",
+                    "MorphismFromCoBidualWithGivenCoBidual using the braiding and the universal property of the codual",
                     [ [ PreCompose, 1 ],
                       [ CoclosedEvaluationForCoDual, 1 ],
                       [ Braiding, 1 ],
@@ -145,7 +145,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( MorphismFromCoBidualWithGivenCoBidual,
-                    "MorphismFromCoBidualWithGivenCoBidual using CoclosedEvaluation, InternalCoHom, && CoclosedCoevaluation",
+                    "MorphismFromCoBidualWithGivenCoBidual using CoclosedEvaluation, InternalCoHom, and CoclosedCoevaluation",
                     [ [ CoDualOnObjects, 1 ],
                       [ TensorUnit, 1 ],
                       [ PreComposeList, 1 ],
@@ -220,7 +220,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( CoDualOnMorphismsWithGivenCoDuals,
-                    "CoDualOnMorphismsWithGivenCoDuals using InternalCoHomOnMorphisms && IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit",
+                    "CoDualOnMorphismsWithGivenCoDuals using InternalCoHomOnMorphisms and IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit",
                     [ [ PreComposeList, 1 ],
                       [ IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit, 1 ],
                       [ InternalCoHomOnMorphisms, 1 ],
@@ -261,7 +261,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( CoclosedEvaluationForCoDualWithGivenTensorProduct,
-                    "CoclosedEvaluationForCoDualWithGivenTensorProduct using the cohom tensor adjunction && IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject",
+                    "CoclosedEvaluationForCoDualWithGivenTensorProduct using the cohom tensor adjunction and IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject",
                     [ [ InternalCoHomToTensorProductAdjunctionMap, 1 ],
                       [ IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject, 1 ] ],
                     
@@ -280,7 +280,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( CoLambdaIntroduction,
-                    "CoLambdaIntroduction using the cohom tensor adjunction && the left unitor inverse",
+                    "CoLambdaIntroduction using the cohom tensor adjunction and the left unitor inverse",
                     [ [ PreCompose, 1 ],
                       [ LeftUnitorInverse, 1 ],
                       [ TensorProductToInternalCoHomAdjunctionMap, 1 ],
@@ -314,7 +314,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( CoLambdaElimination,
-                    "CoLambdaElimination using the cohom tensor adjunction && the left unitor",
+                    "CoLambdaElimination using the cohom tensor adjunction and the left unitor",
                     [ [ InternalCoHomToTensorProductAdjunctionMap, 1 ],
                       [ PreCompose, 1 ],
                       [ LeftUnitor, 1 ] ],
@@ -343,7 +343,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects,
-                    "InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects using associator, braiding && the coclosed evaluation morphism",
+                    "InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects using associator, braiding and the coclosed evaluation morphism",
                     [ [ InternalCoHomOnObjects, 2 ],
                       [ IdentityMorphism, 4 ],
                       [ TensorProductOnObjects, 2 ],
@@ -446,7 +446,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( CoDualityTensorProductCompatibilityMorphismWithGivenObjects,
-                    "CoDualityTensorProductCompatibilityMorphismWithGivenObjects using left unitor, && compatibility of internal cohom && tensor product",
+                    "CoDualityTensorProductCompatibilityMorphismWithGivenObjects using left unitor, and compatibility of internal cohom and tensor product",
                     [ [ TensorUnit, 1 ],
                       [ TensorProductOnObjects, 1 ],
                       [ PreComposeList, 1 ],
@@ -693,7 +693,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( MonoidalPreCoComposeMorphismWithGivenObjects,
-                    "MonoidalPreCoComposeMorphismWithGivenObjects using associator, braiding, coclosed evaluation, && cohom tensor adjunction",
+                    "MonoidalPreCoComposeMorphismWithGivenObjects using associator, braiding, coclosed evaluation, and cohom tensor adjunction",
                     [ [ InternalCoHomOnObjects, 2 ],
                       [ PreComposeList, 1 ],
                       [ CoclosedEvaluationMorphism, 2 ],
@@ -768,7 +768,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( MonoidalPostCoComposeMorphismWithGivenObjects,
-                    "MonoidalPostCoComposeMorphismWithGivenObjects using associator, coclosed evaluation, && cohom tensor adjunction",
+                    "MonoidalPostCoComposeMorphismWithGivenObjects using associator, coclosed evaluation, and cohom tensor adjunction",
                     [ [ InternalCoHomOnObjects, 2 ],
                       [ PreComposeList, 1 ],
                       [ CoclosedEvaluationMorphism, 2 ],
@@ -822,7 +822,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( MonoidalPostCoComposeMorphismWithGivenObjects,
-                    "MonoidalPostCoComposeMorphismWithGivenObjects using MonoidalPreCoComposeMorphism && braiding",
+                    "MonoidalPostCoComposeMorphismWithGivenObjects using MonoidalPreCoComposeMorphism and braiding",
                     [ [ Braiding, 1 ],
                       [ InternalCoHomOnObjects, 2 ],
                       [ PreCompose, 1 ],
@@ -849,7 +849,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( MonoidalPreCoComposeMorphismWithGivenObjects,
-                    "MonoidalPreCoComposeMorphismWithGivenObjects using MonoidalPostCoComposeMorphism && braiding",
+                    "MonoidalPreCoComposeMorphismWithGivenObjects using MonoidalPostCoComposeMorphism and braiding",
                     [ [ Braiding, 1 ],
                       [ InternalCoHomOnObjects, 2 ],
                       [ PreCompose, 1 ],
@@ -876,7 +876,7 @@ end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects,
-                    "InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects using braiding && the coclosed evaluation morphism",
+                    "InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects using braiding and the coclosed evaluation morphism",
                     [ [ InternalCoHomOnObjects, 2 ],
                       [ IdentityMorphism, 4 ],
                       [ TensorProductOnObjects, 2 ],
@@ -947,7 +947,7 @@ end; CategoryFilter = cat -> HasIsSymmetricCoclosedMonoidalCategory( cat ) && Is
 
 ##
 AddDerivationToCAP( CoDualityTensorProductCompatibilityMorphismWithGivenObjects,
-                    "CoDualityTensorProductCompatibilityMorphismWithGivenObjects using compatibility of internal cohom && tensor product",
+                    "CoDualityTensorProductCompatibilityMorphismWithGivenObjects using compatibility of internal cohom and tensor product",
                     [ [ TensorUnit, 1 ],
                       [ TensorProductOnObjects, 1 ],
                       [ PreComposeList, 1 ],
@@ -991,7 +991,7 @@ end; CategoryFilter = cat -> HasIsSymmetricCoclosedMonoidalCategory( cat ) && Is
 
 ##
 AddDerivationToCAP( MonoidalPreCoComposeMorphismWithGivenObjects,
-                    "MonoidalPreCoComposeMorphismWithGivenObjects using braiding, coclosed evaluation, && cohom tensor adjunction",
+                    "MonoidalPreCoComposeMorphismWithGivenObjects using braiding, coclosed evaluation, and cohom tensor adjunction",
                     [ [ InternalCoHomOnObjects, 2 ],
                       [ PreComposeList, 1 ],
                       [ CoclosedEvaluationMorphism, 2 ],
@@ -1052,7 +1052,7 @@ end; CategoryFilter = cat -> HasIsSymmetricCoclosedMonoidalCategory( cat ) && Is
 
 ##
 AddDerivationToCAP( MonoidalPostCoComposeMorphismWithGivenObjects,
-                    "MonoidalPostCoComposeMorphismWithGivenObjects using coclosed evaluation, && cohom tensor adjunction",
+                    "MonoidalPostCoComposeMorphismWithGivenObjects using coclosed evaluation, and cohom tensor adjunction",
                     [ [ InternalCoHomOnObjects, 2 ],
                       [ PreComposeList, 1 ],
                       [ CoclosedEvaluationMorphism, 2 ],

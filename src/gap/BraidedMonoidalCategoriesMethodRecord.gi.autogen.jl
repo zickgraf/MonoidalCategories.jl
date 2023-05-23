@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -17,7 +17,7 @@ Braiding = @rec(
   return_type = "morphism",
   dual_operation = "BraidingInverse",
   dual_arguments_reversed = false,
-  # Test ⥉ BraidedMonoidalCategoriesTest
+  # Test in BraidedMonoidalCategoriesTest
 ),
 
 BraidingWithGivenTensorProducts = @rec(
@@ -39,7 +39,7 @@ BraidingInverse = @rec(
   return_type = "morphism",
   dual_operation = "Braiding",
   dual_arguments_reversed = false,
-  # Test ⥉ BraidedMonoidalCategoriesTest
+  # Test in BraidedMonoidalCategoriesTest
 ),
 
 BraidingInverseWithGivenTensorProducts = @rec(

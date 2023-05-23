@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Declarations
 #
@@ -10,7 +10,7 @@
 #! @Section Add-methods
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `CoevaluationMorphism`.
 #! $F: ( a, b ) \mapsto \mathtt[CoevaluationMorphism](a, b)$.
@@ -29,7 +29,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `CoevaluationMorphismWithGivenRange`.
 #! $F: ( a, b, r ) \mapsto \mathtt[CoevaluationMorphismWithGivenRange](a, b, r)$.
@@ -48,7 +48,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `DualOnMorphisms`.
 #! $F: ( alpha ) \mapsto \mathtt[DualOnMorphisms](alpha)$.
@@ -67,7 +67,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `DualOnMorphismsWithGivenDuals`.
 #! $F: ( s, alpha, r ) \mapsto \mathtt[DualOnMorphismsWithGivenDuals](s, alpha, r)$.
@@ -86,7 +86,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `DualOnObjects`.
 #! $F: ( a ) \mapsto \mathtt[DualOnObjects](a)$.
@@ -105,7 +105,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `EvaluationForDual`.
 #! $F: ( a ) \mapsto \mathtt[EvaluationForDual](a)$.
@@ -124,7 +124,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `EvaluationForDualWithGivenTensorProduct`.
 #! $F: ( s, a, r ) \mapsto \mathtt[EvaluationForDualWithGivenTensorProduct](s, a, r)$.
@@ -143,7 +143,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `EvaluationMorphism`.
 #! $F: ( a, b ) \mapsto \mathtt[EvaluationMorphism](a, b)$.
@@ -162,7 +162,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `EvaluationMorphismWithGivenSource`.
 #! $F: ( a, b, s ) \mapsto \mathtt[EvaluationMorphismWithGivenSource](a, b, s)$.
@@ -181,7 +181,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `InternalHomOnMorphisms`.
 #! $F: ( alpha, beta ) \mapsto \mathtt[InternalHomOnMorphisms](alpha, beta)$.
@@ -200,7 +200,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `InternalHomOnMorphismsWithGivenInternalHoms`.
 #! $F: ( s, alpha, beta, r ) \mapsto \mathtt[InternalHomOnMorphismsWithGivenInternalHoms](s, alpha, beta, r)$.
@@ -219,7 +219,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `InternalHomOnObjects`.
 #! $F: ( a, b ) \mapsto \mathtt[InternalHomOnObjects](a, b)$.
@@ -238,7 +238,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `InternalHomToTensorProductAdjunctionMap`.
 #! $F: ( b, c, g ) \mapsto \mathtt[InternalHomToTensorProductAdjunctionMap](b, c, g)$.
@@ -257,7 +257,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `InternalHomToTensorProductAdjunctionMapWithGivenTensorProduct`.
 #! $F: ( b, c, g, t ) \mapsto \mathtt[InternalHomToTensorProductAdjunctionMapWithGivenTensorProduct](b, c, g, t)$.
@@ -276,7 +276,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `IsomorphismFromDualObjectToInternalHomIntoTensorUnit`.
 #! $F: ( a ) \mapsto \mathtt[IsomorphismFromDualObjectToInternalHomIntoTensorUnit](a)$.
@@ -295,7 +295,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `IsomorphismFromInternalHomIntoTensorUnitToDualObject`.
 #! $F: ( a ) \mapsto \mathtt[IsomorphismFromInternalHomIntoTensorUnitToDualObject](a)$.
@@ -314,7 +314,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `IsomorphismFromInternalHomToObject`.
 #! $F: ( a ) \mapsto \mathtt[IsomorphismFromInternalHomToObject](a)$.
@@ -333,7 +333,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `IsomorphismFromInternalHomToObjectWithGivenInternalHom`.
 #! $F: ( a, s ) \mapsto \mathtt[IsomorphismFromInternalHomToObjectWithGivenInternalHom](a, s)$.
@@ -352,7 +352,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `IsomorphismFromObjectToInternalHom`.
 #! $F: ( a ) \mapsto \mathtt[IsomorphismFromObjectToInternalHom](a)$.
@@ -371,7 +371,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `IsomorphismFromObjectToInternalHomWithGivenInternalHom`.
 #! $F: ( a, r ) \mapsto \mathtt[IsomorphismFromObjectToInternalHomWithGivenInternalHom](a, r)$.
@@ -390,7 +390,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `LambdaElimination`.
 #! $F: ( a, b, alpha ) \mapsto \mathtt[LambdaElimination](a, b, alpha)$.
@@ -409,7 +409,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `LambdaIntroduction`.
 #! $F: ( alpha ) \mapsto \mathtt[LambdaIntroduction](alpha)$.
@@ -428,7 +428,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `MonoidalPostComposeMorphism`.
 #! $F: ( a, b, c ) \mapsto \mathtt[MonoidalPostComposeMorphism](a, b, c)$.
@@ -447,7 +447,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `MonoidalPostComposeMorphismWithGivenObjects`.
 #! $F: ( s, a, b, c, r ) \mapsto \mathtt[MonoidalPostComposeMorphismWithGivenObjects](s, a, b, c, r)$.
@@ -466,7 +466,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `MonoidalPreComposeMorphism`.
 #! $F: ( a, b, c ) \mapsto \mathtt[MonoidalPreComposeMorphism](a, b, c)$.
@@ -485,7 +485,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `MonoidalPreComposeMorphismWithGivenObjects`.
 #! $F: ( s, a, b, c, r ) \mapsto \mathtt[MonoidalPreComposeMorphismWithGivenObjects](s, a, b, c, r)$.
@@ -504,7 +504,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `MorphismFromTensorProductToInternalHom`.
 #! $F: ( a, b ) \mapsto \mathtt[MorphismFromTensorProductToInternalHom](a, b)$.
@@ -523,7 +523,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `MorphismFromTensorProductToInternalHomWithGivenObjects`.
 #! $F: ( s, a, b, r ) \mapsto \mathtt[MorphismFromTensorProductToInternalHomWithGivenObjects](s, a, b, r)$.
@@ -542,7 +542,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `MorphismToBidual`.
 #! $F: ( a ) \mapsto \mathtt[MorphismToBidual](a)$.
@@ -561,7 +561,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `MorphismToBidualWithGivenBidual`.
 #! $F: ( a, r ) \mapsto \mathtt[MorphismToBidualWithGivenBidual](a, r)$.
@@ -580,7 +580,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `TensorProductDualityCompatibilityMorphism`.
 #! $F: ( a, b ) \mapsto \mathtt[TensorProductDualityCompatibilityMorphism](a, b)$.
@@ -599,7 +599,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `TensorProductDualityCompatibilityMorphismWithGivenObjects`.
 #! $F: ( s, a, b, r ) \mapsto \mathtt[TensorProductDualityCompatibilityMorphismWithGivenObjects](s, a, b, r)$.
@@ -618,7 +618,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `TensorProductInternalHomCompatibilityMorphism`.
 #! $F: ( list ) \mapsto \mathtt[TensorProductInternalHomCompatibilityMorphism](list)$.
@@ -637,7 +637,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `TensorProductInternalHomCompatibilityMorphismWithGivenObjects`.
 #! $F: ( source, list, range ) \mapsto \mathtt[TensorProductInternalHomCompatibilityMorphismWithGivenObjects](source, list, range)$.
@@ -656,7 +656,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `TensorProductToInternalHomAdjunctionMap`.
 #! $F: ( a, b, f ) \mapsto \mathtt[TensorProductToInternalHomAdjunctionMap](a, b, f)$.
@@ -675,7 +675,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `TensorProductToInternalHomAdjunctionMapWithGivenInternalHom`.
 #! $F: ( a, b, f, i ) \mapsto \mathtt[TensorProductToInternalHomAdjunctionMapWithGivenInternalHom](a, b, f, i)$.
@@ -694,7 +694,7 @@
                   [ IsCapCategory, IsList ] );
 
 #! @Description
-#! The arguments are a category $C$ && a function $F$.
+#! The arguments are a category $C$ and a function $F$.
 #! This operation adds the given function $F$
 #! to the category for the basic operation `UniversalPropertyOfDual`.
 #! $F: ( t, a, alpha ) \mapsto \mathtt[UniversalPropertyOfDual](t, a, alpha)$.

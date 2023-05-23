@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -9,7 +9,7 @@
 ####################################
 
 ## Final methods for Dual
-AddFinalDerivationBundle( "IsomorphismFromDualObjectToInternalHomIntoTensorUnit && its inverse as the identity of Hom(a,1)",
+AddFinalDerivationBundle( "IsomorphismFromDualObjectToInternalHomIntoTensorUnit and its inverse as the identity of Hom(a,1)",
                     [ [ IdentityMorphism, 1 ],
                       [ InternalHomOnObjects, 1 ],
                       [ TensorUnit, 1 ] ],

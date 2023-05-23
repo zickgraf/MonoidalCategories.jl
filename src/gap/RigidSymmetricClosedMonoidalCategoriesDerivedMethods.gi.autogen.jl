@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -32,7 +32,7 @@ end; CategoryFilter = IsRigidSymmetricClosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( InternalHomOnMorphismsWithGivenInternalHoms,
-                    "InternalHomOnMorphismsWithGivenInternalHoms using functoriality of Dual && TensorProduct",
+                    "InternalHomOnMorphismsWithGivenInternalHoms using functoriality of Dual and TensorProduct",
                     [ [ DualOnMorphisms, 1 ],
                       [ PreComposeList, 1 ],
                       [ IsomorphismFromInternalHomToTensorProductWithDualObject, 1 ],
@@ -159,7 +159,7 @@ end; CategoryFilter = IsRigidSymmetricClosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( EvaluationMorphismWithGivenSource,
-                    "EvaluationMorphismWithGivenSource using the rigidity && strictness of the monoidal category",
+                    "EvaluationMorphismWithGivenSource using the rigidity and strictness of the monoidal category",
                     [ [ PreComposeList, 1 ],
                       [ TensorProductOnMorphisms, 3 ],
                       [ IsomorphismFromInternalHomToTensorProductWithDualObject, 1 ],
@@ -429,7 +429,7 @@ end; CategoryFilter = IsRigidSymmetricClosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( CoevaluationForDualWithGivenTensorProduct,
-                    "CoevaluationForDualWithGivenTensorProduct using LambdaIntroduction on the identity && IsomorphismFromInternalHomToTensorProductWithDualObject",
+                    "CoevaluationForDualWithGivenTensorProduct using LambdaIntroduction on the identity and IsomorphismFromInternalHomToTensorProductWithDualObject",
                     [ [ IdentityMorphism, 1 ],
                       [ PreComposeList, 1 ],
                       [ LambdaIntroduction, 1 ],
@@ -468,7 +468,7 @@ end; CategoryFilter = IsRigidSymmetricClosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( TraceMap,
-                    "TraceMap using LambdaIntroduction && EvaluationForDual",
+                    "TraceMap using LambdaIntroduction and EvaluationForDual",
                     [ [ PreComposeList, 1 ],
                       [ LambdaIntroduction, 1 ],
                       [ IsomorphismFromInternalHomToTensorProductWithDualObject, 1 ],
@@ -533,7 +533,7 @@ end; CategoryFilter = IsRigidSymmetricClosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( DualOnMorphismsWithGivenDuals,
-                    "DualOnMorphismsWithGivenDuals via coevaluation && evaluation for duals",
+                    "DualOnMorphismsWithGivenDuals via coevaluation and evaluation for duals",
                     [ [ PreComposeList, 1 ],
                       [ RightUnitorInverse, 1 ],
                       [ TensorProductOnMorphisms, 4 ],

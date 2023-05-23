@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -20,7 +20,7 @@ TensorProductOnMorphisms = @rec(
   dual_operation = "TensorProductOnMorphisms",
   dual_arguments_reversed = false,
   compatible_with_congruence_of_morphisms = true,
-  # Test ⥉ MonoidalCategoriesTest
+  # Test in MonoidalCategoriesTest
 ),
 
 TensorProductOnMorphismsWithGivenTensorProducts = @rec(
@@ -43,7 +43,7 @@ AssociatorRightToLeft = @rec(
   return_type = "morphism",
   dual_operation = "AssociatorLeftToRight",
   dual_arguments_reversed = false,
-  # Test ⥉ MonoidalCategoriesTest
+  # Test in MonoidalCategoriesTest
 ),
 
 AssociatorRightToLeftWithGivenTensorProducts = @rec(
@@ -65,7 +65,7 @@ AssociatorLeftToRight = @rec(
   return_type = "morphism",
   dual_operation = "AssociatorRightToLeft",
   dual_arguments_reversed = false,
-  # Test ⥉ MonoidalCategoriesTest
+  # Test in MonoidalCategoriesTest
 ),
 
 AssociatorLeftToRightWithGivenTensorProducts = @rec(
@@ -85,7 +85,7 @@ LeftUnitor = @rec(
   with_given_object_position = "Source",
   return_type = "morphism",
   dual_operation = "LeftUnitorInverse",
-  # Test ⥉ MonoidalCategoriesTest
+  # Test in MonoidalCategoriesTest
 ),
 
 LeftUnitorWithGivenTensorProduct = @rec(
@@ -105,7 +105,7 @@ LeftUnitorInverse = @rec(
   with_given_object_position = "Range",
   return_type = "morphism",
   dual_operation = "LeftUnitor",
-  # Test ⥉ MonoidalCategoriesTest
+  # Test in MonoidalCategoriesTest
 ),
 
 LeftUnitorInverseWithGivenTensorProduct = @rec(
@@ -125,7 +125,7 @@ RightUnitor = @rec(
   with_given_object_position = "Source",
   return_type = "morphism",
   dual_operation = "RightUnitorInverse",
-  # Test ⥉ MonoidalCategoriesTest
+  # Test in MonoidalCategoriesTest
 ),
 
 RightUnitorWithGivenTensorProduct = @rec(
@@ -145,7 +145,7 @@ RightUnitorInverse = @rec(
   with_given_object_position = "Range",
   return_type = "morphism",
   dual_operation = "RightUnitor",
-  # Test ⥉ MonoidalCategoriesTest
+  # Test in MonoidalCategoriesTest
 ),
 
 RightUnitorInverseWithGivenTensorProduct = @rec(

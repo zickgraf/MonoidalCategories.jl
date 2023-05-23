@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -55,7 +55,7 @@
             @Assert( 0, IsEqualForObjects( a_tensor_b_op, Opposite( opposite, a_tensor_b ) ) );
             @Assert( 0, IsEqualForObjects( b_tensor_a_op, Opposite( opposite, b_tensor_a ) ) );
             
-            # Convenience methods ⥉ the opposite category
+            # Convenience methods in the opposite category
             
             @Assert( 0, IsEqualForObjects( a_tensor_b_op, TensorProduct( a_op, b_op ) ) );
             @Assert( 0, IsEqualForObjects( b_tensor_a_op, TensorProduct( b_op, a_op ) ) );

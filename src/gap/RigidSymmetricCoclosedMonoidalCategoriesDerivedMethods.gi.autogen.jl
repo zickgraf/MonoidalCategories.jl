@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Implementations
 #
@@ -32,7 +32,7 @@ end; CategoryFilter = IsRigidSymmetricClosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( InternalCoHomOnMorphismsWithGivenInternalCoHoms,
-                    "InternalCoHomOnMorphismsWithGivenInternalCoHoms using functoriality of CoDual && TensorProduct",
+                    "InternalCoHomOnMorphismsWithGivenInternalCoHoms using functoriality of CoDual and TensorProduct",
                     [ [ CoDualOnMorphisms, 1 ],
                       [ PreComposeList, 1 ],
                       [ IsomorphismFromInternalCoHomToTensorProductWithCoDualObject, 1 ],
@@ -159,7 +159,7 @@ end; CategoryFilter = IsRigidSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( CoclosedEvaluationMorphismWithGivenRange,
-                    "CoclosedEvaluationMorphismWithGivenRange using the rigidity && strictness of the monoidal category",
+                    "CoclosedEvaluationMorphismWithGivenRange using the rigidity and strictness of the monoidal category",
                     [ [ PreComposeList, 1 ],
                       [ TensorProductOnMorphisms, 3 ],
                       [ IdentityMorphism, 3 ],
@@ -381,7 +381,7 @@ AddDerivationToCAP( IsomorphismFromTensorProductWithCoDualObjectToInternalCoHom,
 end; CategoryFilter = IsRigidSymmetricClosedMonoidalCategory );
 
 AddDerivationToCAP( CoclosedCoevaluationForCoDualWithGivenTensorProduct,
-                    "CoclosedCoevaluationForCoDualWithGivenTensorProduct using CoLambdaIntroduction on the identity && IsomorphismFromTensorProductWithCoDualObjectToInternalCoHom",
+                    "CoclosedCoevaluationForCoDualWithGivenTensorProduct using CoLambdaIntroduction on the identity and IsomorphismFromTensorProductWithCoDualObjectToInternalCoHom",
                     [ [ IdentityMorphism, 1 ],
                       [ PreComposeList, 1 ],
                       [ Braiding, 1 ],
@@ -420,7 +420,7 @@ end; CategoryFilter = IsRigidSymmetricCoclosedMonoidalCategory );
 
 ##
 AddDerivationToCAP( CoTraceMap,
-                    "CoTraceMap using CoclosedEvaluationForCoDual && CoLambdaIntroduction",
+                    "CoTraceMap using CoclosedEvaluationForCoDual and CoLambdaIntroduction",
                     [ [ PreComposeList, 1 ],
                       [ CoclosedEvaluationForCoDual, 1 ],
                       [ IsomorphismFromTensorProductWithCoDualObjectToInternalCoHom, 1 ],

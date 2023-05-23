@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0-or-later
-# MonoidalCategories: Monoidal && monoidal (co)closed categories
+# MonoidalCategories: Monoidal and monoidal (co)closed categories
 #
 # Declarations
 #
@@ -16,7 +16,7 @@
 
 #! @Description
 #!  This functions uses the dictionary <A>key_val_rec</A> to create a new monoidal structure.
-#!  It generates the necessary files ⥉ the package <A>package_name</A> using
+#!  It generates the necessary files in the package <A>package_name</A> using
 #!  the file-correspondence table <A>files_rec</A>.
 #!  See the implementation for details.
 #! @Returns nothing
