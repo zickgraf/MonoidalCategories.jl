@@ -21,9 +21,9 @@
         
         verbose = ValueOption( "verbose" ) == true;
         
-        if CanCompute( cat, "TensorUnit" )
+        if (CanCompute( cat, "TensorUnit" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'TensorUnit' ..." );
@@ -37,9 +37,9 @@
             
         end;
         
-        if CanCompute( cat, "TensorProductOnObjects" )
+        if (CanCompute( cat, "TensorProductOnObjects" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'TensorProductOnObjects' ..." );

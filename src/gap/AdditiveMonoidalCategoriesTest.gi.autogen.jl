@@ -18,9 +18,9 @@
         
         verbose = ValueOption( "verbose" ) == true;
         
-        if CanCompute( cat, "LeftDistributivityExpanding" )
+        if (CanCompute( cat, "LeftDistributivityExpanding" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'LeftDistributivityExpanding' ..." );
@@ -34,9 +34,9 @@
             
         end;
         
-        if CanCompute( cat, "LeftDistributivityFactoring" )
+        if (CanCompute( cat, "LeftDistributivityFactoring" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'LeftDistributivityFactoring' ..." );
@@ -50,9 +50,9 @@
             
         end;
         
-        if CanCompute( cat, "RightDistributivityExpanding" )
+        if (CanCompute( cat, "RightDistributivityExpanding" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'RightDistributivityExpanding' ..." );
@@ -66,9 +66,9 @@
             
         end;
         
-        if CanCompute( cat, "RightDistributivityFactoring" )
+        if (CanCompute( cat, "RightDistributivityFactoring" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'RightDistributivityFactoring' ..." );

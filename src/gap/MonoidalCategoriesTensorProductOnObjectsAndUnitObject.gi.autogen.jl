@@ -13,7 +13,7 @@ InstallMethod( @__MODULE__,  TensorProductOp,
     
     size = Length( list );
     
-    if size == 1
+    if (size == 1)
         
         return object;
         
@@ -40,7 +40,7 @@ InstallMethod( @__MODULE__,  TensorProductOp,
     
     size = Length( list );
     
-    if size == 1
+    if (size == 1)
         
         return morphism;
         

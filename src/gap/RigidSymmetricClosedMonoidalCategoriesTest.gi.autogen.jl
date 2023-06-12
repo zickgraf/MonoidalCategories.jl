@@ -44,9 +44,9 @@
         
         verbose = ValueOption( "verbose" ) == true;
         
-        if CanCompute( cat, "IsomorphismFromTensorProductWithDualObjectToInternalHom" )
+        if (CanCompute( cat, "IsomorphismFromTensorProductWithDualObjectToInternalHom" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'IsomorphismFromTensorProductWithDualObjectToInternalHom' ..." );
@@ -64,9 +64,9 @@
             
         end;
         
-        if CanCompute( cat, "IsomorphismFromInternalHomToTensorProductWithDualObject" )
+        if (CanCompute( cat, "IsomorphismFromInternalHomToTensorProductWithDualObject" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'IsomorphismFromInternalHomToTensorProductWithDualObject' ..." );
@@ -84,9 +84,9 @@
             
         end;
         
-        if CanCompute( cat, "MorphismFromInternalHomToTensorProduct" )
+        if (CanCompute( cat, "MorphismFromInternalHomToTensorProduct" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'MorphismFromInternalHomToTensorProduct' ..." );
@@ -104,9 +104,9 @@
             
         end;
         
-        if CanCompute( cat, "TensorProductInternalHomCompatibilityMorphismInverse" )
+        if (CanCompute( cat, "TensorProductInternalHomCompatibilityMorphismInverse" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'TensorProductInternalHomCompatibilityMorphismInverse' ..." );
@@ -133,9 +133,9 @@
             
         end;
         
-        if CanCompute( cat, "CoevaluationForDual" )
+        if (CanCompute( cat, "CoevaluationForDual" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'CoevaluationForDual' ..." );
@@ -153,9 +153,9 @@
             
         end;
         
-        if CanCompute( cat, "TraceMap" )
+        if (CanCompute( cat, "TraceMap" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'TraceMap' ..." );
@@ -170,9 +170,9 @@
             
         end;
         
-        if CanCompute( cat, "RankMorphism" )
+        if (CanCompute( cat, "RankMorphism" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'RankMorphism' ..." );
@@ -190,9 +190,9 @@
             
         end;
         
-        if CanCompute( cat, "MorphismFromBidual" )
+        if (CanCompute( cat, "MorphismFromBidual" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'MorphismFromBidual' ..." );

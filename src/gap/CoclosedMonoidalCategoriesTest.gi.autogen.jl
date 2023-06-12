@@ -85,9 +85,9 @@
         
         verbose = ValueOption( "verbose" ) == true;
         
-        if CanCompute( cat, "InternalCoHomOnObjects" )
+        if (CanCompute( cat, "InternalCoHomOnObjects" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'InternalCoHomOnObjects' ..." );
@@ -115,9 +115,9 @@
             
         end;
         
-        if CanCompute( cat, "InternalCoHomOnMorphisms" )
+        if (CanCompute( cat, "InternalCoHomOnMorphisms" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'InternalCoHomOnMorphisms' ..." );
@@ -145,9 +145,9 @@
             
         end;
         
-        if CanCompute( cat, "CoclosedEvaluationMorphism" )
+        if (CanCompute( cat, "CoclosedEvaluationMorphism" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'CoclosedEvaluationMorphism' ..." );
@@ -166,9 +166,9 @@
             
         end;
         
-        if CanCompute( cat, "CoclosedCoevaluationMorphism" )
+        if (CanCompute( cat, "CoclosedCoevaluationMorphism" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'CoclosedCoevaluationMorphism' ..." );
@@ -186,9 +186,9 @@
             
         end;
         
-        if CanCompute( cat, "TensorProductToInternalCoHomAdjunctionMap" )
+        if (CanCompute( cat, "TensorProductToInternalCoHomAdjunctionMap" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'TensorProductToInternalCoHomAdjunctionMap' ..." );
@@ -238,9 +238,9 @@
             
         end;
         
-        if CanCompute( cat, "InternalCoHomToTensorProductAdjunctionMap" )
+        if (CanCompute( cat, "InternalCoHomToTensorProductAdjunctionMap" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'InternalCoHomToTensorProductAdjunctionMap' ..." );
@@ -285,9 +285,9 @@
             
         end;
         
-        if CanCompute( cat, "MonoidalPreCoComposeMorphism" )
+        if (CanCompute( cat, "MonoidalPreCoComposeMorphism" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'MonoidalPreCoComposeMorphism' ..." );
@@ -305,9 +305,9 @@
         
         end;
         
-        if CanCompute( cat, "MonoidalPostCoComposeMorphism" )
+        if (CanCompute( cat, "MonoidalPostCoComposeMorphism" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'MonoidalPostCoComposeMorphism' ..." );
@@ -325,9 +325,9 @@
             
         end;
         
-        if CanCompute( cat, "CoDualOnObjects" )
+        if (CanCompute( cat, "CoDualOnObjects" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'CoDualOnObjects' ..." );
@@ -345,9 +345,9 @@
             
         end;
         
-        if CanCompute( cat, "CoDualOnMorphisms" )
+        if (CanCompute( cat, "CoDualOnMorphisms" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'CoDualOnMorphisms' ..." );
@@ -365,9 +365,9 @@
             
         end;
         
-        if CanCompute( cat, "CoclosedEvaluationForCoDual" )
+        if (CanCompute( cat, "CoclosedEvaluationForCoDual" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'CoclosedEvaluationForCoDual' ..." );
@@ -385,9 +385,9 @@
             
         end;
         
-        if CanCompute( cat, "MorphismFromCoBidual" )
+        if (CanCompute( cat, "MorphismFromCoBidual" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'MorphismFromCoBidual' ..." );
@@ -405,9 +405,9 @@
             
         end;
         
-        if CanCompute( cat, "InternalCoHomTensorProductCompatibilityMorphism" )
+        if (CanCompute( cat, "InternalCoHomTensorProductCompatibilityMorphism" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'InternalCoHomTensorProductCompatibilityMorphism' ..." );
@@ -434,9 +434,9 @@
             
         end;
         
-        if CanCompute( cat, "CoDualityTensorProductCompatibilityMorphism" )
+        if (CanCompute( cat, "CoDualityTensorProductCompatibilityMorphism" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'CoDualityTensorProductCompatibilityMorphism' ..." );
@@ -463,9 +463,9 @@
             
         end;
         
-        if CanCompute( cat, "MorphismFromInternalCoHomToTensorProduct" )
+        if (CanCompute( cat, "MorphismFromInternalCoHomToTensorProduct" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'MorphismFromInternalCoHomToTensorProduct' ..." );
@@ -483,9 +483,9 @@
             
         end;
         
-        if CanCompute( cat, "IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject" )
+        if (CanCompute( cat, "IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject' ..." );
@@ -503,9 +503,9 @@
             
         end;
         
-        if CanCompute( cat, "IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit" )
+        if (CanCompute( cat, "IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit' ..." );
@@ -523,9 +523,9 @@
             
         end;
         
-        if CanCompute( cat, "UniversalPropertyOfCoDual" )
+        if (CanCompute( cat, "UniversalPropertyOfCoDual" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'UniversalPropertyOfCoDual' ..." );
@@ -546,9 +546,9 @@
             
         end;
         
-        if CanCompute( cat, "CoLambdaIntroduction" )
+        if (CanCompute( cat, "CoLambdaIntroduction" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'CoLambdaIntroduction' ..." );
@@ -566,9 +566,9 @@
             
         end;
         
-        if CanCompute( cat, "CoLambdaElimination" )
+        if (CanCompute( cat, "CoLambdaElimination" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'CoLambdaElimination' ..." );
@@ -589,9 +589,9 @@
             
         end;
         
-        if CanCompute( cat, "IsomorphismFromObjectToInternalCoHom" )
+        if (CanCompute( cat, "IsomorphismFromObjectToInternalCoHom" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'IsomorphismFromObjectToInternalCoHom' ..." );
@@ -609,9 +609,9 @@
             
         end;
         
-        if CanCompute( cat, "IsomorphismFromInternalCoHomToObject" )
+        if (CanCompute( cat, "IsomorphismFromInternalCoHomToObject" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'IsomorphismFromInternalCoHomToObject' ..." );
@@ -629,13 +629,13 @@
             
         end;
         
-        if CanCompute( cat, "InternalCoHomOnObjects" ) &&
+        if (CanCompute( cat, "InternalCoHomOnObjects" ) &&
            CanCompute( cat, "CoclosedEvaluationMorphism" ) &&
            CanCompute( cat, "InternalCoHomToTensorProductAdjunctionMap" )
         
-       
+       )
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Consistency between 'CoclosedEvalutionMorphism' and 'AdjunctionMap' ..." );
@@ -659,13 +659,13 @@
             
         end;
         
-        if CanCompute( cat, "TensorProductOnObjects" ) &&
+        if (CanCompute( cat, "TensorProductOnObjects" ) &&
            CanCompute( cat, "CoclosedCoevaluationMorphism" ) &&
            CanCompute( cat, "TensorProductToInternalCoHomAdjunctionMap" )
         
-       
+       )
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Consistency between 'CoevalutionMorphism' and 'AdjunctionMap' ..." );

@@ -53,7 +53,7 @@ InstallMethod( @__MODULE__,  CheckBraiding,
                     TensorProductOnMorphisms( IdentityMorphism( A ), Braiding( B, C ) ),
                     AssociatorRightToLeft( A, C, B ) ] );
     
-    if !IsCongruentForMorphisms( mor1, mor2 )
+    if (@not IsCongruentForMorphisms( mor1, mor2 ))
        return false;
     end;
     

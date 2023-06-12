@@ -39,9 +39,9 @@
         
         verbose = ValueOption( "verbose" ) == true;
         
-        if CanCompute( cat, "TensorProductOnMorphisms" )
+        if (CanCompute( cat, "TensorProductOnMorphisms" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'TensorProductOnMorphisms' ..." );
@@ -64,9 +64,9 @@
             
         end;
         
-        if CanCompute( cat, "LeftUnitor" )
+        if (CanCompute( cat, "LeftUnitor" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'LeftUnitor' ..." );
@@ -84,9 +84,9 @@
             
         end;
         
-        if CanCompute( cat, "RightUnitor" )
+        if (CanCompute( cat, "RightUnitor" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'RightUnitor' ..." );
@@ -104,9 +104,9 @@
             
         end;
         
-        if CanCompute( cat, "LeftUnitorInverse" )
+        if (CanCompute( cat, "LeftUnitorInverse" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'LeftUnitorInverse' ..." );
@@ -124,9 +124,9 @@
             
         end;
         
-        if CanCompute( cat, "RightUnitorInverse" )
+        if (CanCompute( cat, "RightUnitorInverse" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'RightUnitorInverse' ..." );
@@ -144,9 +144,9 @@
             
         end;
         
-        if CanCompute( cat, "AssociatorLeftToRight" )
+        if (CanCompute( cat, "AssociatorLeftToRight" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'AssociatorLeftToRight' ..." );
@@ -164,9 +164,9 @@
             
         end;
         
-        if CanCompute( cat, "AssociatorRightToLeft" )
+        if (CanCompute( cat, "AssociatorRightToLeft" ))
             
-            if verbose
+            if (verbose)
                 
                 # COVERAGE_IGNORE_NEXT_LINE
                 Display( "Testing 'AssociatorRightToLeft' ..." );

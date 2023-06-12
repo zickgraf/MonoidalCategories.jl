@@ -49,7 +49,7 @@
            ];
     
     for name in L
-        if !@IsBound( key_val_rec[name] )
+        if (@not @IsBound( key_val_rec[name] ))
             Error( "the component with the name ", name, " is missing in the given key_value_record record\n" );
         end;
     end;
@@ -69,11 +69,11 @@
     Add( L, [ "tensor hom", key_val_rec.tensor_hom ] );
     Add( L, [ "\\underline[Hom]", key_val_rec.Hom ] );
     
-    if @IsBound( key_val_rec.replace )
+    if (@IsBound( key_val_rec.replace ))
         Append( L, key_val_rec.replace );
     end;
     
-    if @IsBound( key_val_rec.safe_replace )
+    if (@IsBound( key_val_rec.safe_replace ))
         L = @Concatenation(
                      List( key_val_rec.safe_replace, r -> [ r[1], ShaSum( r[1] ) ] ), ## detect at the very beginning && replace by sha's (order is important!)
                      L,
@@ -116,9 +116,9 @@ end );
                       "# THIS FILE WAS AUTOMATICALLY GENERATED",
                       "\n\n" );
     for file in files
-        if !@IsBound( files_rec[file] )
+        if (@not @IsBound( files_rec[file] ))
             @Info( InfoWarning, 1, "the component ", file, " is not bound in the record 'files_rec'" );
-        elseif IsString( files_rec[file] )
+        elseif (IsString( files_rec[file] ))
             source = @Concatenation( dir, ReplacedString( file, "_", "." ) );
             target = @Concatenation( PackageInfo( package_name )[1].InstallationPath, "/gap/", files_rec[file] );
             WriteReplacedFileForHomalg( source, L, target; header = header );
