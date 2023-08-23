@@ -72,7 +72,7 @@ AddDerivationToCAP( InternalCoHomToTensorProductAdjunctionMap,
                       [ IdentityMorphism, 1 ] ],
                     
   function( cat, a, b, f )
-
+    
     # f: Cohom(a,b) → c
     #
     #        a
@@ -99,7 +99,7 @@ AddDerivationToCAP( UniversalPropertyOfCoDual,
                       [ TensorProductToInternalCoHomAdjunctionMap, 1 ] ],
                     
   function( cat, t, a, alpha )
-
+    
     # alpha: 1 → t ⊗ a
     #
     # a_v → ( Cohom(1,a) → t ) == Adjoint( alpha )
@@ -121,7 +121,7 @@ AddDerivationToCAP( MorphismFromCoBidualWithGivenCoBidual,
                     
   function( cat, a, avv )
     local alpha;
-
+    
     #    1
     #    |
     #    | coclev_a
@@ -156,8 +156,8 @@ AddDerivationToCAP( MorphismFromCoBidualWithGivenCoBidual,
                       [ CoclosedCoevaluationMorphism, 1 ] ],
                     
   function( cat, a, avv )
-    local morphism, av, tensor_unit;
-
+    local av, morphism;
+    
     #     Cohom(1, a_v)
     #          |
     #          | Cohom( coclev_(1,a), id_(a_v) )
@@ -174,22 +174,19 @@ AddDerivationToCAP( MorphismFromCoBidualWithGivenCoBidual,
     
     av = CoDualOnObjects( cat, a );
     
-    tensor_unit = TensorUnit( cat );
-    
-    morphism = PreComposeList( cat, [
-                  InternalCoHomOnMorphisms( cat,
-                    CoclosedEvaluationMorphism( cat, tensor_unit, a ),
-                    IdentityMorphism( cat, av ) ),
-                  
-                  InternalCoHomOnMorphisms( cat,
-                    Braiding( cat, av, a ),
-                    IdentityMorphism( cat, av ) ),
-                  
-                  CoclosedCoevaluationMorphism( cat, a, av )
-                ] );
+    morphism = PreComposeList( cat,
+                        [ InternalCoHomOnMorphisms( cat,
+                                CoclosedEvaluationMorphism( cat, TensorUnit( cat ), a ),
+                                IdentityMorphism( cat, av ) ),
+                          
+                          InternalCoHomOnMorphisms( cat,
+                                  Braiding( cat, av, a ),
+                                  IdentityMorphism( cat, av ) ),
+                          
+                          CoclosedCoevaluationMorphism( cat, a, av ) ] );
     
     return morphism;
-
+    
 end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
@@ -198,7 +195,7 @@ AddDerivationToCAP( CoDualOnObjects,
                     [ [ IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit, 1 ] ],
                     
   function( cat, a )
-
+    
     # Source( a_v → Cohom(1,a) )
     
     return Source( IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit( cat, a ) );
@@ -211,7 +208,7 @@ AddDerivationToCAP( CoDualOnObjects,
                     [ [ IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject, 1 ] ],
                     
   function( cat, a )
-
+    
     # Range( Cohom(1,a) → a_v )
     
     return Range( IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, a ) );
@@ -230,7 +227,7 @@ AddDerivationToCAP( CoDualOnMorphismsWithGivenCoDuals,
                     
   function( cat, s, alpha, r )
     local result_morphism;
-
+    
     # alpha: a → b
     #
     #    b_v
@@ -245,16 +242,15 @@ AddDerivationToCAP( CoDualOnMorphismsWithGivenCoDuals,
     #     v
     #    a_v
     
-    result_morphism = PreComposeList( cat, [
-                         IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit( cat, Range( alpha ) ),
-                         
-                         InternalCoHomOnMorphisms( cat,
-                           IdentityMorphism( cat, TensorUnit( cat ) ),
-                           alpha ),
-                           
-                         IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, Source( alpha ) )
-                       ] );
-                       
+    result_morphism = PreComposeList( cat,
+                               [ IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit( cat, Range( alpha ) ),
+                                 
+                                 InternalCoHomOnMorphisms( cat,
+                                         IdentityMorphism( cat, TensorUnit( cat ) ),
+                                         alpha ),
+                                 
+                                 IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, Source( alpha ) ) ] );
+    
     return result_morphism;
     
 end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
@@ -266,9 +262,9 @@ AddDerivationToCAP( CoclosedEvaluationForCoDualWithGivenTensorProduct,
                       [ IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject, 1 ] ],
                     
   function( cat, s, a, r )
-
+    
     # s = 1
-
+    
     # Adjoint( Cohom(1,a) → a_v ) == ( 1 → a_v ⊗ a )
 
     return InternalCoHomToTensorProductAdjunctionMap( cat,
@@ -288,7 +284,7 @@ AddDerivationToCAP( CoLambdaIntroduction,
                     
   function( cat, alpha )
     local result_morphism, range;
-
+    
     #   a
     #   |
     #   | alpha
@@ -321,7 +317,7 @@ AddDerivationToCAP( CoLambdaElimination,
                     
   function( cat, a, b, alpha )
     local result_morphism;
-
+    
     # alpha: Cohom(a,b) → 1
     # Adjoint( alpha ) == ( a → 1 ⊗ b )
     #
@@ -346,18 +342,18 @@ AddDerivationToCAP( InternalCoHomTensorProductCompatibilityMorphismWithGivenObje
                     "InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects using associator, braiding and the coclosed evaluation morphism",
                     [ [ InternalCoHomOnObjects, 2 ],
                       [ IdentityMorphism, 4 ],
-                      [ TensorProductOnObjects, 2 ],
+                      [ TensorProductOnObjects, 1 ],
                       [ PreComposeList, 1 ],
                       [ TensorProductOnMorphisms, 7 ],
                       [ CoclosedEvaluationMorphism, 2 ],
                       [ AssociatorRightToLeft, 2 ],
                       [ AssociatorLeftToRight, 2 ],
                       [ Braiding, 1 ],
-                      [ TensorProductToInternalCoHomAdjunctionMap, 1 ] ],
+                      [ TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom, 1 ] ],
                     
   function( cat, source, list, range )
-    local a1, a2, b1, b2, morphism, int_cohom_a1_b1, int_cohom_a2_b2, id_b2, tensor_product_on_objects_int_cohom_a1_b1_int_cohom_a2_b2;
-
+    local a1, a2, b1, b2, b1b2, int_cohom_a1_b1, int_cohom_a2_b2, id_b2, morphism;
+    
     #                   a1 ⊗ a2
     #                      |
     #                      | id_a1 ⊗ coclev_(a2,b2)
@@ -396,52 +392,51 @@ AddDerivationToCAP( InternalCoHomTensorProductCompatibilityMorphismWithGivenObje
     b1 = list[3];
     b2 = list[4];
     
+    b1b2 = TensorProductOnObjects( cat, b1, b2 );
+    
     int_cohom_a1_b1 = InternalCoHomOnObjects( cat, a1, b1 );
     
     int_cohom_a2_b2 = InternalCoHomOnObjects( cat, a2, b2 );
-
+    
     id_b2 = IdentityMorphism( cat, b2 );
     
-    tensor_product_on_objects_int_cohom_a1_b1_int_cohom_a2_b2 =
-      TensorProductOnObjects( cat, int_cohom_a1_b1, int_cohom_a2_b2 );
+    morphism = PreComposeList( cat,
+                        [ TensorProductOnMorphisms( cat,
+                                IdentityMorphism( cat, a1 ),
+                                CoclosedEvaluationMorphism( cat, a2, b2 ) ),
+                          
+                          AssociatorRightToLeft( cat, a1, int_cohom_a2_b2, b2 ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  TensorProductOnMorphisms( cat,
+                                          CoclosedEvaluationMorphism( cat, a1, b1 ),
+                                          IdentityMorphism( cat, int_cohom_a2_b2 ) ),
+                                  id_b2 ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  AssociatorLeftToRight( cat, int_cohom_a1_b1, b1, int_cohom_a2_b2 ),
+                                  id_b2 ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  TensorProductOnMorphisms( cat,
+                                          IdentityMorphism( cat, int_cohom_a1_b1 ),
+                                          Braiding( cat, b1, int_cohom_a2_b2 ) ),
+                                  id_b2 ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  AssociatorRightToLeft( cat, int_cohom_a1_b1, int_cohom_a2_b2, b1 ),
+                                  id_b2 ),
+                          
+                          AssociatorLeftToRight( cat,
+                                  range,
+                                  b1, b2 ) ] );
     
-    morphism = PreComposeList( cat, [
-                  TensorProductOnMorphisms( cat,
-                    IdentityMorphism( cat, a1 ),
-                    CoclosedEvaluationMorphism( cat, a2, b2 ) ),
-                  
-                  AssociatorRightToLeft( cat, a1, int_cohom_a2_b2, b2),
-                  
-                  TensorProductOnMorphisms( cat,
-                    TensorProductOnMorphisms( cat,
-                      CoclosedEvaluationMorphism( cat, a1, b1 ),
-                      IdentityMorphism( cat, int_cohom_a2_b2)),
-                    id_b2 ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    AssociatorLeftToRight( cat, int_cohom_a1_b1, b1, int_cohom_a2_b2 ),
-                    id_b2 ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    TensorProductOnMorphisms( cat,
-                      IdentityMorphism( cat, int_cohom_a1_b1),
-                      Braiding( cat, b1, int_cohom_a2_b2 ) ),
-                    id_b2 ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    AssociatorRightToLeft( cat, int_cohom_a1_b1, int_cohom_a2_b2, b1 ),
-                    id_b2 ),
-                  
-                  AssociatorLeftToRight( cat,
-                    tensor_product_on_objects_int_cohom_a1_b1_int_cohom_a2_b2,
-                    b1, b2 )
-                ] );
-
-    return TensorProductToInternalCoHomAdjunctionMap( cat,
-             tensor_product_on_objects_int_cohom_a1_b1_int_cohom_a2_b2,
-             TensorProductOnObjects( cat, b1, b2 ),
-             morphism );
-
+    return TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom( cat,
+                   range,
+                   b1b2,
+                   morphism,
+                   source );
+    
 end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
@@ -459,8 +454,8 @@ AddDerivationToCAP( CoDualityTensorProductCompatibilityMorphismWithGivenObjects,
                       [ IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject, 2 ] ],
                     
   function( cat, s, a, b, r )
-    local morphism, unit, tensor_product_on_a_and_b;
-
+    local unit, tensor_product_on_a_and_b, morphism;
+    
     #         (a ⊗ b)_v
     #            |
     #            V
@@ -481,22 +476,21 @@ AddDerivationToCAP( CoDualityTensorProductCompatibilityMorphismWithGivenObjects,
     
     tensor_product_on_a_and_b = TensorProductOnObjects( cat, a, b );
     
-    morphism = PreComposeList( cat, [
-                  IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit( cat, tensor_product_on_a_and_b ),
-                  
-                  InternalCoHomOnMorphisms( cat,
-                    LeftUnitorInverse( cat, unit ),
-                    IdentityMorphism( cat, tensor_product_on_a_and_b ) ),
-                  
-                  InternalCoHomTensorProductCompatibilityMorphism( cat, [ unit, unit, a, b ] ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, a ),
-                    IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, b ) )
-                ] );
-
+    morphism = PreComposeList( cat,
+                        [ IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit( cat, tensor_product_on_a_and_b ),
+                          
+                          InternalCoHomOnMorphisms( cat,
+                                  LeftUnitorInverse( cat, unit ),
+                                  IdentityMorphism( cat, tensor_product_on_a_and_b ) ),
+                          
+                          InternalCoHomTensorProductCompatibilityMorphism( cat, [ unit, unit, a, b ] ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, a ),
+                                  IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, b ) ) ] );
+    
     return morphism;
-
+    
 end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
 ##
@@ -511,7 +505,7 @@ AddDerivationToCAP( IsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom,
                     
   function( cat, a, internal_cohom )
     local unit;
-
+    
     #     Cohom(a, 1)
     #         |
     #         | Cohom((ρ_a)^-1, id_1)
@@ -525,11 +519,11 @@ AddDerivationToCAP( IsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom,
     unit = TensorUnit( cat );
     
     return PreCompose( cat,
-             InternalCoHomOnMorphisms( cat,
-               RightUnitorInverse( cat, a ),
-               IdentityMorphism( cat, unit ) ),
-               
-             CoclosedCoevaluationMorphism( cat, a, unit ));
+                   InternalCoHomOnMorphisms( cat,
+                           RightUnitorInverse( cat, a ),
+                           IdentityMorphism( cat, unit ) ),
+                   
+                   CoclosedCoevaluationMorphism( cat, a, unit ) );
     
 end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
@@ -541,18 +535,15 @@ AddDerivationToCAP( IsomorphismFromInternalCoHomToObjectWithGivenInternalCoHom,
                       [ RightUnitorInverse, 1 ] ],
                     
   function( cat, a, internal_cohom )
-    local unit;
-
+    
     # (ρ_a)^-1: a → a ⊗ 1
     #
     # Adjoint( (ρ_a)^-1 ) == ( Cohom(a,1) → a )
     
-    unit = TensorUnit( cat );
-    
     return TensorProductToInternalCoHomAdjunctionMap( cat,
-             a,
-             unit,
-             RightUnitorInverse( cat, a ) );
+                   a,
+                   TensorUnit( cat ),
+                   RightUnitorInverse( cat, a ) );
     
 end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
@@ -578,8 +569,7 @@ AddDerivationToCAP( IsomorphismFromObjectToInternalCoHomWithGivenInternalCoHom,
                       [ RightUnitor, 1 ] ],
                     
   function( cat, a, internal_cohom )
-    local unit;
-
+    
     #       a
     #       |
     #       | coclev_(a,1)
@@ -590,10 +580,9 @@ AddDerivationToCAP( IsomorphismFromObjectToInternalCoHomWithGivenInternalCoHom,
     #       v
     #   Cohom(a,1)
     
-    unit = TensorUnit( cat );
-    
-    return PreCompose( cat, CoclosedEvaluationMorphism( cat, a, unit ),
-                       RightUnitor( cat, internal_cohom ) );
+    return PreCompose( cat,
+                   CoclosedEvaluationMorphism( cat, a, TensorUnit( cat ) ),
+                   RightUnitor( cat, internal_cohom ) );
     
 end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
@@ -625,7 +614,7 @@ AddDerivationToCAP( MorphismFromInternalCoHomToTensorProductWithGivenObjects,
                     
   function( cat, internal_cohom, a, b, tensor_object )
     local unit;
-
+    
     #       Cohom(a,b)
     #            |
     #            | Cohom((λ_a)^-1, ρ_b)
@@ -641,18 +630,17 @@ AddDerivationToCAP( MorphismFromInternalCoHomToTensorProductWithGivenObjects,
     
     unit = TensorUnit( cat );
     
-    return PreComposeList( cat, [
-             InternalCoHomOnMorphisms( cat,
-               LeftUnitorInverse( cat, a ),
-               RightUnitor( cat, b ) ),
-              
-             InternalCoHomTensorProductCompatibilityMorphism( cat,
-               [ unit, a, b, unit ] ),
-              
-             TensorProductOnMorphisms( cat,
-               IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, b ),
-               IsomorphismFromInternalCoHomToObject( cat, a ) )
-           ] );
+    return PreComposeList( cat,
+                   [ InternalCoHomOnMorphisms( cat,
+                           LeftUnitorInverse( cat, a ),
+                           RightUnitor( cat, b ) ),
+                     
+                     InternalCoHomTensorProductCompatibilityMorphism( cat,
+                             [ unit, a, b, unit ] ),
+                     
+                     TensorProductOnMorphisms( cat,
+                             IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, b ),
+                             IsomorphismFromInternalCoHomToObject( cat, a ) ) ] );
     
 end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
@@ -664,7 +652,7 @@ AddDerivationToCAP( CoclosedEvaluationMorphismWithGivenRange,
                       [ InternalCoHomOnObjects, 1 ] ],
                     
   function( cat, a, b, tensor_object )
-
+    
     # Adjoint( id_Cohom(a,b): Cohom(a,b) → Cohom(a,b) ) == ( a → Cohom(a,b) ⊗ b )
     
     return InternalCoHomToTensorProductAdjunctionMap( cat,
@@ -681,7 +669,7 @@ AddDerivationToCAP( CoclosedCoevaluationMorphismWithGivenSource,
                       [ TensorProductOnObjects, 1 ] ],
                     
   function( cat, a, b, internal_cohom )
-
+    
     # Adjoint( id_(a ⊗ b): a ⊗ b → a ⊗ b ) == ( Cohom(a ⊗ b, b) → a )
     
     return TensorProductToInternalCoHomAdjunctionMap( cat,
@@ -702,12 +690,11 @@ AddDerivationToCAP( MonoidalPreCoComposeMorphismWithGivenObjects,
                       [ IdentityMorphism, 2 ],
                       [ AssociatorLeftToRight, 1 ],
                       [ AssociatorRightToLeft, 1 ],
-                      [ TensorProductToInternalCoHomAdjunctionMap, 1 ],
-                      [ TensorProductOnObjects, 1 ] ],
+                      [ TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom, 1 ] ],
                     
   function( cat, source, a, b, c, range )
     local cohom_a_b, cohom_b_c, morphism;
-
+    
     #           a
     #           |
     #           | coclev_ab
@@ -741,28 +728,28 @@ AddDerivationToCAP( MonoidalPreCoComposeMorphismWithGivenObjects,
     
     cohom_b_c = InternalCoHomOnObjects( cat, b, c );
     
-    morphism = PreComposeList( cat, [
-                  CoclosedEvaluationMorphism( cat, a, b ),
-                  
-                  Braiding( cat, cohom_a_b, b ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    CoclosedEvaluationMorphism( cat, b, c ),
-                    IdentityMorphism( cat, cohom_a_b ) ),
-                  
-                  AssociatorLeftToRight( cat, cohom_b_c, c, cohom_a_b ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    IdentityMorphism( cat, cohom_b_c ),
-                    Braiding( cat, c, cohom_a_b ) ),
-                  
-                  AssociatorRightToLeft( cat, cohom_b_c, cohom_a_b, c ),
-                ] );
+    morphism = PreComposeList( cat,
+                        [ CoclosedEvaluationMorphism( cat, a, b ),
+                          
+                          Braiding( cat, cohom_a_b, b ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  CoclosedEvaluationMorphism( cat, b, c ),
+                                  IdentityMorphism( cat, cohom_a_b ) ),
+                          
+                          AssociatorLeftToRight( cat, cohom_b_c, c, cohom_a_b ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  IdentityMorphism( cat, cohom_b_c ),
+                                  Braiding( cat, c, cohom_a_b ) ),
+                          
+                          AssociatorRightToLeft( cat, cohom_b_c, cohom_a_b, c ) ] );
     
-    return TensorProductToInternalCoHomAdjunctionMap( cat,
-             TensorProductOnObjects( cat, cohom_b_c, cohom_a_b ),
-             c,
-             morphism );
+    return TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom( cat,
+                   range,
+                   c,
+                   morphism,
+                   source );
     
 end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
@@ -775,12 +762,11 @@ AddDerivationToCAP( MonoidalPostCoComposeMorphismWithGivenObjects,
                       [ TensorProductOnMorphisms, 1 ],
                       [ IdentityMorphism, 1 ],
                       [ AssociatorRightToLeft, 1 ],
-                      [ TensorProductToInternalCoHomAdjunctionMap, 1 ],
-                      [ TensorProductOnObjects, 1 ] ],
+                      [ TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom, 1 ] ],
                     
   function( cat, source, a, b, c, range )
     local cohom_a_b, cohom_b_c, morphism;
-
+    
     #             a
     #             |
     #             | coclev_ab
@@ -802,21 +788,20 @@ AddDerivationToCAP( MonoidalPostCoComposeMorphismWithGivenObjects,
     
     cohom_b_c = InternalCoHomOnObjects( cat, b, c );
     
-    morphism = PreComposeList( cat, [
-                  CoclosedEvaluationMorphism( cat, a, b ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    IdentityMorphism( cat, cohom_a_b ),
-                    CoclosedEvaluationMorphism( cat, b, c )
-                  ),
-                  
-                  AssociatorRightToLeft( cat, cohom_a_b, cohom_b_c, c )
-                ] );
+    morphism = PreComposeList( cat,
+                        [ CoclosedEvaluationMorphism( cat, a, b ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  IdentityMorphism( cat, cohom_a_b ),
+                                  CoclosedEvaluationMorphism( cat, b, c ) ),
+                          
+                          AssociatorRightToLeft( cat, cohom_a_b, cohom_b_c, c ) ] );
     
-    return TensorProductToInternalCoHomAdjunctionMap( cat,
-             TensorProductOnObjects( cat, cohom_a_b, cohom_b_c ),
-             c,
-             morphism );
+    return TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom( cat,
+                   range,
+                   c,
+                   morphism,
+                   source );
     
 end; CategoryFilter = IsSymmetricCoclosedMonoidalCategory );
 
@@ -830,7 +815,7 @@ AddDerivationToCAP( MonoidalPostCoComposeMorphismWithGivenObjects,
                     
   function( cat, source, a, b, c, range )
     local braiding;
-
+    
     #       Cohom(a,c)
     #            |
     #            | PreCoCompose
@@ -879,16 +864,16 @@ AddDerivationToCAP( InternalCoHomTensorProductCompatibilityMorphismWithGivenObje
                     "InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects using braiding and the coclosed evaluation morphism",
                     [ [ InternalCoHomOnObjects, 2 ],
                       [ IdentityMorphism, 4 ],
-                      [ TensorProductOnObjects, 2 ],
+                      [ TensorProductOnObjects, 1 ],
                       [ PreComposeList, 1 ],
                       [ TensorProductOnMorphisms, 5 ],
                       [ CoclosedEvaluationMorphism, 2 ],
                       [ Braiding, 1 ],
-                      [ TensorProductToInternalCoHomAdjunctionMap, 1 ] ],
+                      [ TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom, 1 ] ],
                     
   function( cat, source, list, range )
-    local a1, a2, b1, b2, morphism, int_cohom_a1_b1, int_cohom_a2_b2, id_b2, tensor_product_on_objects_int_cohom_a1_b1_int_cohom_a2_b2;
-
+    local a1, a2, b1, b2, b1b2, int_cohom_a1_b1, int_cohom_a2_b2, id_b2, morphism;
+    
     #           a1 ⊗ a2
     #              |
     #              | id_a1 ⊗ coclev_(a2,b2)
@@ -911,37 +896,36 @@ AddDerivationToCAP( InternalCoHomTensorProductCompatibilityMorphismWithGivenObje
     b1 = list[3];
     b2 = list[4];
     
+    b1b2 = TensorProductOnObjects( cat, b1, b2 );
+    
     int_cohom_a1_b1 = InternalCoHomOnObjects( cat, a1, b1 );
     
     int_cohom_a2_b2 = InternalCoHomOnObjects( cat, a2, b2 );
 
     id_b2 = IdentityMorphism( cat, b2 );
     
-    tensor_product_on_objects_int_cohom_a1_b1_int_cohom_a2_b2 =
-      TensorProductOnObjects( cat, int_cohom_a1_b1, int_cohom_a2_b2 );
+    morphism = PreComposeList( cat,
+                        [ TensorProductOnMorphisms( cat,
+                                IdentityMorphism( cat, a1 ),
+                                CoclosedEvaluationMorphism( cat, a2, b2 ) ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  TensorProductOnMorphisms( cat,
+                                          CoclosedEvaluationMorphism( cat, a1, b1 ),
+                                          IdentityMorphism( cat, int_cohom_a2_b2 ) ),
+                                  id_b2 ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  TensorProductOnMorphisms( cat,
+                                          IdentityMorphism( cat, int_cohom_a1_b1 ),
+                                          Braiding( cat, b1, int_cohom_a2_b2 ) ),
+                                  id_b2 ) ] );
     
-    morphism = PreComposeList( cat, [
-                  TensorProductOnMorphisms( cat,
-                    IdentityMorphism( cat, a1 ),
-                    CoclosedEvaluationMorphism( cat, a2, b2 ) ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    TensorProductOnMorphisms( cat,
-                      CoclosedEvaluationMorphism( cat, a1, b1 ),
-                      IdentityMorphism( cat, int_cohom_a2_b2)),
-                    id_b2 ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    TensorProductOnMorphisms( cat,
-                      IdentityMorphism( cat, int_cohom_a1_b1),
-                      Braiding( cat, b1, int_cohom_a2_b2 ) ),
-                    id_b2 ),
-                ] );
-
-    return TensorProductToInternalCoHomAdjunctionMap( cat,
-             tensor_product_on_objects_int_cohom_a1_b1_int_cohom_a2_b2,
-             TensorProductOnObjects( cat, b1, b2 ),
-             morphism );
+    return TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom( cat,
+                   range,
+                   b1b2,
+                   morphism,
+                   source );
     
 end; CategoryFilter = cat -> HasIsSymmetricCoclosedMonoidalCategory( cat ) && IsSymmetricCoclosedMonoidalCategory( cat ) && HasIsStrictMonoidalCategory( cat ) && IsStrictMonoidalCategory( cat ) );
 
@@ -957,8 +941,8 @@ AddDerivationToCAP( CoDualityTensorProductCompatibilityMorphismWithGivenObjects,
                       [ IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject, 2 ] ],
                     
   function( cat, source, a, b, range )
-    local morphism, unit, tensor_product_on_a_and_b;
-
+    local unit, morphism;
+    
     #         (a ⊗ b)_v
     #            |
     #            V
@@ -973,18 +957,15 @@ AddDerivationToCAP( CoDualityTensorProductCompatibilityMorphismWithGivenObjects,
     
     unit = TensorUnit( cat );
     
-    tensor_product_on_a_and_b = TensorProductOnObjects( cat, a, b );
+    morphism = PreComposeList( cat,
+                        [ IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit( cat, TensorProductOnObjects( cat, a, b ) ),
+                          
+                          InternalCoHomTensorProductCompatibilityMorphism( cat, [ unit, unit, a, b ] ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, a ),
+                                  IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, b ) ) ] );
     
-    morphism = PreComposeList( cat, [
-                  IsomorphismFromCoDualObjectToInternalCoHomFromTensorUnit( cat, tensor_product_on_a_and_b ),
-                  
-                  InternalCoHomTensorProductCompatibilityMorphism( cat, [ unit, unit, a, b ] ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, a ),
-                    IsomorphismFromInternalCoHomFromTensorUnitToCoDualObject( cat, b ) )
-                ] );
-              
     return morphism;
     
 end; CategoryFilter = cat -> HasIsSymmetricCoclosedMonoidalCategory( cat ) && IsSymmetricCoclosedMonoidalCategory( cat ) && HasIsStrictMonoidalCategory( cat ) && IsStrictMonoidalCategory( cat ) );
@@ -998,12 +979,11 @@ AddDerivationToCAP( MonoidalPreCoComposeMorphismWithGivenObjects,
                       [ Braiding, 2 ],
                       [ TensorProductOnMorphisms, 2 ],
                       [ IdentityMorphism, 2 ],
-                      [ TensorProductToInternalCoHomAdjunctionMap, 1 ],
-                      [ TensorProductOnObjects, 1 ] ],
+                      [ TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom, 1 ] ],
                     
   function( cat, source, a, b, c, range )
     local cohom_a_b, cohom_b_c, morphism;
-
+    
     #            a
     #            |
     #            | coclev_ab
@@ -1029,41 +1009,40 @@ AddDerivationToCAP( MonoidalPreCoComposeMorphismWithGivenObjects,
     
     cohom_b_c = InternalCoHomOnObjects( cat, b, c );
     
-    morphism = PreComposeList( cat, [
-                  CoclosedEvaluationMorphism( cat, a, b ),
-                  
-                  Braiding( cat, cohom_a_b, b),
-                  
-                  TensorProductOnMorphisms( cat,
-                    CoclosedEvaluationMorphism( cat, b, c ),
-                    IdentityMorphism( cat, cohom_a_b ) ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    IdentityMorphism( cat, cohom_b_c ),
-                    Braiding( cat, c, cohom_a_b ) )
-                ] );
+    morphism = PreComposeList( cat,
+                        [ CoclosedEvaluationMorphism( cat, a, b ),
+                          
+                          Braiding( cat, cohom_a_b, b ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  CoclosedEvaluationMorphism( cat, b, c ),
+                                  IdentityMorphism( cat, cohom_a_b ) ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  IdentityMorphism( cat, cohom_b_c ),
+                                  Braiding( cat, c, cohom_a_b ) ) ] );
     
-    return TensorProductToInternalCoHomAdjunctionMap( cat,
-             TensorProductOnObjects( cat, cohom_b_c, cohom_a_b ),
-             c,
-             morphism );
+    return TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom( cat,
+                   range,
+                   c,
+                   morphism,
+                   source );
     
 end; CategoryFilter = cat -> HasIsSymmetricCoclosedMonoidalCategory( cat ) && IsSymmetricCoclosedMonoidalCategory( cat ) && HasIsStrictMonoidalCategory( cat ) && IsStrictMonoidalCategory( cat ) );
 
 ##
 AddDerivationToCAP( MonoidalPostCoComposeMorphismWithGivenObjects,
                     "MonoidalPostCoComposeMorphismWithGivenObjects using coclosed evaluation, and cohom tensor adjunction",
-                    [ [ InternalCoHomOnObjects, 2 ],
+                    [ [ InternalCoHomOnObjects, 1 ],
                       [ PreComposeList, 1 ],
                       [ CoclosedEvaluationMorphism, 2 ],
                       [ TensorProductOnMorphisms, 1 ],
                       [ IdentityMorphism, 1 ],
-                      [ TensorProductToInternalCoHomAdjunctionMap, 1 ],
-                      [ TensorProductOnObjects, 1 ] ],
+                      [ TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom, 1 ] ],
                     
   function( cat, source, a, b, c, range )
-    local cohom_a_b, cohom_b_c, morphism;
-
+    local morphism;
+    
     #             a
     #             |
     #             | coclev_ab
@@ -1077,21 +1056,17 @@ AddDerivationToCAP( MonoidalPostCoComposeMorphismWithGivenObjects,
     #
     # Adjoint( a → (Cohom(a,b) ⊗ Cohom(b,c)) ⊗ c ) == ( Cohom(a,c) → Cohom(a,b) ⊗ Cohom(b,c) )
     
-    cohom_a_b = InternalCoHomOnObjects( cat, a, b );
+    morphism = PreComposeList( cat,
+                        [ CoclosedEvaluationMorphism( cat, a, b ),
+                          
+                          TensorProductOnMorphisms( cat,
+                                  IdentityMorphism( cat, InternalCoHomOnObjects( cat, a, b ) ),
+                                  CoclosedEvaluationMorphism( cat, b, c ) ) ] );
     
-    cohom_b_c = InternalCoHomOnObjects( cat, b, c );
-    
-    morphism = PreComposeList( cat, [
-                  CoclosedEvaluationMorphism( cat, a, b ),
-                  
-                  TensorProductOnMorphisms( cat,
-                    IdentityMorphism( cat, cohom_a_b ),
-                    CoclosedEvaluationMorphism( cat, b, c ) )
-                ] );
-    
-    return TensorProductToInternalCoHomAdjunctionMap( cat,
-             TensorProductOnObjects( cat, cohom_a_b, cohom_b_c ),
-             c,
-             morphism );
+    return TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom( cat,
+                   range,
+                   c,
+                   morphism,
+                   source );
     
 end; CategoryFilter = cat -> HasIsSymmetricCoclosedMonoidalCategory( cat ) && IsSymmetricCoclosedMonoidalCategory( cat ) && HasIsStrictMonoidalCategory( cat ) && IsStrictMonoidalCategory( cat ) );
