@@ -5,7 +5,7 @@
 #
 
 ##
-@InstallGlobalFunction( CAP_INTERNAL_FUNC_FOR_COCLOSED_MONOIDAL_STRUCTURES,
+@InstallGlobalFunction( CAP_INTERNAL_FUNC_FOR_LEFT_CLOSED_MONOIDAL_STRUCTURES,
   function( key_val_rec, package_name )
     local L, name;
     
@@ -13,8 +13,8 @@
            "IsStrictMonoidalCategory",
            "IsBraidedMonoidalCategory",
            "IsSymmetricMonoidalCategory",
-           "IsCoclosedMonoidalCategory",
-           "IsSymmetricCoclosedMonoidalCategory",
+           "IsLeftClosedMonoidalCategory",
+           "IsSymmetricClosedMonoidalCategory",
            "AdditiveMonoidal",
            "TensorProductOnObjects",
            "TensorProduct",
@@ -24,16 +24,15 @@
            "RightUnitor",
            "Distributivity",
            "Braiding",
-           "CoLambda",
-           "CoclosedMonoidalLeftEvaluation",
-           "CoclosedMonoidalLeftCoevaluation",
-           "InternalCoHom",
-           "CoDual",
-           "CoclosedEvaluationFor",
-           "CoBidual",
-           "CoclosedMonoidalCategories",
-           "COCLOSED_MONOIDAL",
-           "CoclosedMonoidal",
+           "LeftClosedMonoidalLambda",
+           "LeftClosedMonoidalEvaluation",
+           "LeftClosedMonoidalCoevaluation",
+           "LeftInternalHom",
+           "LeftDual",
+           "LeftBidual",
+           "LeftClosedMonoidalCategories",
+           "LEFT_CLOSED_MONOIDAL",
+           "LeftClosedMonoidal",
            "MONOIDAL",
            "Monoidal",
            "monoidal",
@@ -42,9 +41,9 @@
            "otimes",
            "tensor_product",
            "tensorSproduct",
-           "cohom_tensor",
-           "coHom",
-           "CoclosedSMonoidal",
+           "tensor_hom",
+           "Hom",
+           "ClosedSMonoidal",
            "TensorProductOnObjectsBCcat",
            "CAP_INTERNAL_REGISTER_METHOD_NAME_RECORD_OF_PACKAGE",
            ];
@@ -61,14 +60,14 @@
                  [ [ "\"MonoidalCategories\",", @Concatenation( "\"", package_name, "\"," ) ],
                    [ @Concatenation( PackageInfo( "MonoidalCategories" )[1].PackageName, ": ", PackageInfo( "MonoidalCategories" )[1].Subtitle ),
                      @Concatenation( PackageInfo( package_name )[1].PackageName, ": ", PackageInfo( package_name )[1].Subtitle ) ],
-                   [ "Coclosed Monoidal", key_val_rec.CoclosedSMonoidal ],
+                   [ "Left Closed Monoidal", key_val_rec.ClosedSMonoidal ],
                    [ "TensorProductOnObjects( cat,", key_val_rec.TensorProductOnObjectsBCcat ],
                    [ "METHOD_NAME_RECORD, \"MonoidalCategories\"", key_val_rec.CAP_INTERNAL_REGISTER_METHOD_NAME_RECORD_OF_PACKAGE ],
                    ], L );
     
     Add( L, [ "tensor product", key_val_rec.tensorSproduct ] );
-    Add( L, [ "cohom tensor", key_val_rec.cohom_tensor ] );
-    Add( L, [ "\\underline[coHom]", key_val_rec.coHom ] );
+    Add( L, [ "tensor hom", key_val_rec.tensor_hom ] );
+    Add( L, [ "\\underline[Hom]_\\ell", key_val_rec.Hom ] );
     
     if (@IsBound( key_val_rec.replace ))
         Append( L, key_val_rec.replace );
@@ -86,36 +85,36 @@
 end );
 
 ##
-@InstallGlobalFunction( WriteFileForCoclosedMonoidalStructure,
+@InstallGlobalFunction( WriteFileForLeftClosedMonoidalStructure,
   function( key_val_rec, package_name, files_rec )
     local dir, L, files, header, file, source, target;
     
-    L = CAP_INTERNAL_FUNC_FOR_COCLOSED_MONOIDAL_STRUCTURES( key_val_rec, package_name );
+    L = CAP_INTERNAL_FUNC_FOR_LEFT_CLOSED_MONOIDAL_STRUCTURES( key_val_rec, package_name );
     
     dir = @Concatenation( PackageInfo( "MonoidalCategories" )[1].InstallationPath, "/gap/" );
     
-    files = [ "CoclosedMonoidalCategories_gd",
-               "CoclosedMonoidalCategoriesTest_gd",
-               "RigidSymmetricCoclosedMonoidalCategories_gd",
-               "RigidSymmetricCoclosedMonoidalCategoriesTest_gd",
-               "CoclosedMonoidalCategoriesProperties_gi",
-               "CoclosedMonoidalCategoriesMethodRecord_gi",
-               "CoclosedMonoidalCategories_gi",
-               "CoclosedMonoidalCategoriesTest_gi",
-               "SymmetricCoclosedMonoidalCategoriesProperties_gi",
-               "RigidSymmetricCoclosedMonoidalCategoriesProperties_gi",
-               "RigidSymmetricCoclosedMonoidalCategoriesMethodRecord_gi",
-               "RigidSymmetricCoclosedMonoidalCategories_gi",
-               "RigidSymmetricCoclosedMonoidalCategoriesTest_gi",
-               "CoclosedMonoidalCategoriesDerivedMethods_gi",
-               "SymmetricCoclosedMonoidalCategoriesDerivedMethods_gi",
-               "RigidSymmetricCoclosedMonoidalCategoriesDerivedMethods_gi",
+    files = [ "LeftClosedMonoidalCategories_gd",
+               "LeftClosedMonoidalCategoriesTest_gd",
+               "RigidSymmetricClosedMonoidalCategories_gd",
+               "RigidSymmetricClosedMonoidalCategoriesTest_gd",
+               "LeftClosedMonoidalCategoriesProperties_gi",
+               "LeftClosedMonoidalCategoriesMethodRecord_gi",
+               "LeftClosedMonoidalCategories_gi",
+               "LeftClosedMonoidalCategoriesTest_gi",
+               "SymmetricClosedMonoidalCategoriesProperties_gi",
+               "RigidSymmetricClosedMonoidalCategoriesProperties_gi",
+               "RigidSymmetricClosedMonoidalCategoriesMethodRecord_gi",
+               "RigidSymmetricClosedMonoidalCategories_gi",
+               "RigidSymmetricClosedMonoidalCategoriesTest_gi",
+               "LeftClosedMonoidalCategoriesDerivedMethods_gi",
+               "SymmetricClosedMonoidalCategoriesDerivedMethods_gi",
+               "RigidSymmetricClosedMonoidalCategoriesDerivedMethods_gi",
+               "HomomorphismStructureDerivedMethods_gi",
                ];
     
     header = @Concatenation(
                       "# THIS FILE WAS AUTOMATICALLY GENERATED",
                       "\n\n" );
-    
     for file in files
         if (@not @IsBound( files_rec[file] ))
             @Info( InfoWarning, 1, "the component ", file, " is not bound in the record 'files_rec'" );

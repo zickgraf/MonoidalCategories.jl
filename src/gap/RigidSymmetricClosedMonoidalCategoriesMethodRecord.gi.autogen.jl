@@ -4,7 +4,7 @@
 # Implementations
 #
 
-@InstallValueConst( RIGID_SYMMETRIC_CLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, @rec(
+@InstallValueConst( RIGID_SYMMETRIC_LEFT_CLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD, @rec(
 
 CoevaluationForDual = @rec(
   filter_list = [ "category", "object" ],
@@ -81,7 +81,7 @@ TensorProductInternalHomCompatibilityMorphismInverseWithGivenObjects = @rec(
   output_range_getter_string = "range",
   dual_operation = "InternalCoHomTensorProductCompatibilityMorphismInverseWithGivenObjects",
   dual_preprocessor_func =
-    ( cat, s, list, r ) -> NTupleGAP( 4, Opposite( cat ), Opposite( r ), [ Opposite( list[2] ), Opposite( list[4] ), Opposite( list[1] ), Opposite( list[3] ) ], Opposite( s ) ),
+    ( cat, s, list, r ) -> @NTupleGAP( 4, Opposite( cat ), Opposite( r ), [ Opposite( list[2] ), Opposite( list[4] ), Opposite( list[1] ), Opposite( list[3] ) ], Opposite( s ) ),
   dual_arguments_reversed = false,
 ),
 

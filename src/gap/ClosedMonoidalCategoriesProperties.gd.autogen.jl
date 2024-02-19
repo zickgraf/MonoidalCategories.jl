@@ -5,7 +5,7 @@
 #
 
 #! @Description
-#!  The property of the category <A>C</A> being closed monoidal.
+#!  The property of the category <A>C</A> being (bi)closed monoidal.
 #! @Arguments C
 @DeclareProperty( "IsClosedMonoidalCategory", IsCapCategory );
 

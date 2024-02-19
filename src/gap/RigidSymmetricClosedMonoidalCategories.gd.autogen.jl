@@ -12,7 +12,7 @@
 ##
 ####################################
 
-DeclareGlobalVariable( "RIGID_SYMMETRIC_CLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD" );
+DeclareGlobalVariable( "RIGID_SYMMETRIC_LEFT_CLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD" );
 
 #! @Description
 #! The arguments are two objects $a,b$.

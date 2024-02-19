@@ -41,22 +41,21 @@ InternalHomOnMorphismsWithGivenInternalHoms = @rec(
   dual_arguments_reversed = true,
 ),
 
-EvaluationMorphism = @rec(
+ClosedMonoidalRightEvaluationMorphism = @rec(
   filter_list = [ "category", "object", "object" ],
   return_type = "morphism",
   input_arguments_names = [ "cat", "a", "b" ],
-  output_range_getter_string = "b",
-  output_range_getter_preconditions = [ ],
-  output_source_getter_string = "TensorProductOnObjects( cat, InternalHomOnObjects( cat, a, b ), a )",
+  output_source_getter_string = "TensorProductOnObjects( cat, a, InternalHomOnObjects( cat, a, b ) )",
   output_source_getter_preconditions = [ [ "TensorProductOnObjects", 1 ], [ "InternalHomOnObjects", 1 ] ],
   output_range_getter_string = "b",
+  output_range_getter_preconditions = [ ],
   with_given_object_position = "Source",
-  dual_operation = "CoclosedEvaluationMorphism",
-  dual_arguments_reversed = true,
+  dual_operation = "CoclosedMonoidalRightEvaluationMorphism",
+  dual_arguments_reversed = false,
   # Test in ClosedMonoidalCategoriesTest
 ),
 
-EvaluationMorphismWithGivenSource = @rec(
+ClosedMonoidalRightEvaluationMorphismWithGivenSource = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   return_type = "morphism",
   input_arguments_names = [ "cat", "a", "b", "s" ],
@@ -64,39 +63,143 @@ EvaluationMorphismWithGivenSource = @rec(
   output_source_getter_preconditions = [ ],
   output_range_getter_string = "b",
   output_range_getter_preconditions = [ ],
-  dual_operation = "CoclosedEvaluationMorphismWithGivenRange",
-  dual_preprocessor_func = ( cat, a, b, s ) -> NTupleGAP( 4, Opposite( cat ), Opposite( b ), Opposite( a ), Opposite( s ) ),
+  dual_operation = "CoclosedMonoidalRightEvaluationMorphismWithGivenRange",
   dual_arguments_reversed = false,
 ),
 
-CoevaluationMorphism = @rec(
+ClosedMonoidalRightCoevaluationMorphism = @rec(
   filter_list = [ "category", "object", "object" ],
   return_type = "morphism",
   input_arguments_names = [ "cat", "a", "b" ],
-  output_source_getter_string = "a",
+  output_source_getter_string = "b",
   output_source_getter_preconditions = [ ],
-  output_source_getter_string = "a",
-  output_range_getter_string = "InternalHomOnObjects( cat, b, TensorProductOnObjects( cat, a, b ) )",
+  output_range_getter_string = "InternalHomOnObjects( cat, a, TensorProductOnObjects( cat, a, b ) )",
   output_range_getter_preconditions = [ [ "InternalHomOnObjects", 1 ], [ "TensorProductOnObjects", 1 ] ],
   with_given_object_position = "Range",
-  dual_operation = "CoclosedCoevaluationMorphism",
+  dual_operation = "CoclosedMonoidalRightCoevaluationMorphism",
   dual_arguments_reversed = false,
   # Test in ClosedMonoidalCategoriesTest
 ),
 
-CoevaluationMorphismWithGivenRange = @rec(
+ClosedMonoidalRightCoevaluationMorphismWithGivenRange = @rec(
   filter_list = [ "category", "object", "object", "object" ],
   return_type = "morphism",
   input_arguments_names = [ "cat", "a", "b", "r" ],
-  output_source_getter_string = "a",
+  output_source_getter_string = "b",
   output_source_getter_preconditions = [ ],
   output_range_getter_string = "r",
   output_range_getter_preconditions = [ ],
-  dual_operation = "CoclosedCoevaluationMorphismWithGivenSource",
+  dual_operation = "CoclosedMonoidalRightCoevaluationMorphismWithGivenSource",
   dual_arguments_reversed = false,
 ),
 
-TensorProductToInternalHomAdjunctionMap = @rec(
+TensorProductToInternalHomRightAdjunctMorphism = @rec(
+  filter_list = [ "category", "object", "object", "morphism" ],
+  return_type = "morphism",
+  input_arguments_names = [ "cat", "a", "b", "f" ],
+  output_source_getter_string = "b",
+  output_source_getter_preconditions = [ ],
+  output_range_getter_string = "InternalHomOnObjects( cat, a, Range( f ) )",
+  output_range_getter_preconditions = [ [ "InternalHomOnObjects", 1 ] ],
+  with_given_object_position = "Range",
+  dual_operation = "TensorProductToInternalCoHomRightAdjunctMorphism",
+  dual_arguments_reversed = false,
+  # Test in ClosedMonoidalCategoriesTest
+),
+
+TensorProductToInternalHomRightAdjunctMorphismWithGivenInternalHom = @rec(
+  filter_list = [ "category", "object", "object", "morphism", "object" ],
+  return_type = "morphism",
+  input_arguments_names = [ "cat", "a", "b", "f", "i" ],
+  output_source_getter_string = "b",
+  output_source_getter_preconditions = [ ],
+  output_range_getter_string = "i",
+  output_range_getter_preconditions = [ ],
+  dual_operation = "TensorProductToInternalCoHomRightAdjunctMorphismWithGivenInternalCoHom",
+  dual_arguments_reversed = false,
+),
+
+InternalHomToTensorProductRightAdjunctMorphism = @rec(
+  filter_list = [ "category", "object", "object", "morphism" ],
+  return_type = "morphism",
+  input_arguments_names = [ "cat", "a", "c", "g" ],
+  output_source_getter_string = "TensorProductOnObjects( cat, a, Source( g ) )",
+  output_source_getter_preconditions = [ [ "TensorProductOnObjects", 1 ] ],
+  output_range_getter_string = "c",
+  output_range_getter_preconditions = [ ],
+  with_given_object_position = "Source",
+  dual_operation = "InternalCoHomToTensorProductRightAdjunctMorphism",
+  dual_preprocessor_func = ( cat, a, c, g ) -> @NTupleGAP( 4, Opposite( cat ), Opposite( c ), Opposite( a ), Opposite( g ) ),
+  dual_arguments_reversed = false,
+  # Test in ClosedMonoidalCategoriesTest
+),
+
+InternalHomToTensorProductRightAdjunctMorphismWithGivenTensorProduct = @rec(
+  filter_list = [ "category", "object", "object", "morphism", "object" ],
+  return_type = "morphism",
+  input_arguments_names = [ "cat", "a", "c", "g", "s" ],
+  output_source_getter_string = "s",
+  output_source_getter_preconditions = [ ],
+  output_range_getter_string = "c",
+  output_range_getter_preconditions = [ ],
+  dual_operation = "InternalCoHomToTensorProductRightAdjunctMorphismWithGivenTensorProduct",
+  dual_preprocessor_func = ( cat, a, c, g, s ) -> @NTupleGAP( 5, Opposite( cat ), Opposite( c ), Opposite( a ), Opposite( g ), Opposite( s ) ),
+  dual_arguments_reversed = false,
+),
+
+ClosedMonoidalLeftEvaluationMorphism = @rec(
+  filter_list = [ "category", "object", "object" ],
+  return_type = "morphism",
+  input_arguments_names = [ "cat", "a", "b" ],
+  output_source_getter_string = "TensorProductOnObjects( cat, InternalHomOnObjects( cat, a, b ), a )",
+  output_source_getter_preconditions = [ [ "TensorProductOnObjects", 1 ], [ "InternalHomOnObjects", 1 ] ],
+  output_range_getter_string = "b",
+  output_range_getter_preconditions = [ ],
+  with_given_object_position = "Source",
+  dual_operation = "CoclosedMonoidalLeftEvaluationMorphism",
+  dual_arguments_reversed = false,
+  # Test in ClosedMonoidalCategoriesTest
+),
+
+ClosedMonoidalLeftEvaluationMorphismWithGivenSource = @rec(
+  filter_list = [ "category", "object", "object", "object" ],
+  return_type = "morphism",
+  input_arguments_names = [ "cat", "a", "b", "s" ],
+  output_source_getter_string = "s",
+  output_source_getter_preconditions = [ ],
+  output_range_getter_string = "b",
+  output_range_getter_preconditions = [ ],
+  dual_operation = "CoclosedMonoidalLeftEvaluationMorphismWithGivenRange",
+  dual_arguments_reversed = false,
+),
+
+ClosedMonoidalLeftCoevaluationMorphism = @rec(
+  filter_list = [ "category", "object", "object" ],
+  return_type = "morphism",
+  input_arguments_names = [ "cat", "a", "b" ],
+  output_source_getter_string = "b",
+  output_source_getter_preconditions = [ ],
+  output_range_getter_string = "InternalHomOnObjects( cat, a, TensorProductOnObjects( cat, b, a ) )",
+  output_range_getter_preconditions = [ [ "InternalHomOnObjects", 1 ], [ "TensorProductOnObjects", 1 ] ],
+  with_given_object_position = "Range",
+  dual_operation = "CoclosedMonoidalLeftCoevaluationMorphism",
+  dual_arguments_reversed = false,
+  # Test in ClosedMonoidalCategoriesTest
+),
+
+ClosedMonoidalLeftCoevaluationMorphismWithGivenRange = @rec(
+  filter_list = [ "category", "object", "object", "object" ],
+  return_type = "morphism",
+  input_arguments_names = [ "cat", "a", "b", "r" ],
+  output_source_getter_string = "b",
+  output_source_getter_preconditions = [ ],
+  output_range_getter_string = "r",
+  output_range_getter_preconditions = [ ],
+  dual_operation = "CoclosedMonoidalLeftCoevaluationMorphismWithGivenSource",
+  dual_arguments_reversed = false,
+),
+
+TensorProductToInternalHomLeftAdjunctMorphism = @rec(
   filter_list = [ "category", "object", "object", "morphism" ],
   return_type = "morphism",
   input_arguments_names = [ "cat", "a", "b", "f" ],
@@ -105,12 +208,12 @@ TensorProductToInternalHomAdjunctionMap = @rec(
   output_range_getter_string = "InternalHomOnObjects( cat, b, Range( f ) )",
   output_range_getter_preconditions = [ [ "InternalHomOnObjects", 1 ] ],
   with_given_object_position = "Range",
-  dual_operation = "TensorProductToInternalCoHomAdjunctionMap",
+  dual_operation = "TensorProductToInternalCoHomLeftAdjunctMorphism",
   dual_arguments_reversed = false,
   # Test in ClosedMonoidalCategoriesTest
 ),
 
-TensorProductToInternalHomAdjunctionMapWithGivenInternalHom = @rec(
+TensorProductToInternalHomLeftAdjunctMorphismWithGivenInternalHom = @rec(
   filter_list = [ "category", "object", "object", "morphism", "object" ],
   return_type = "morphism",
   input_arguments_names = [ "cat", "a", "b", "f", "i" ],
@@ -118,11 +221,11 @@ TensorProductToInternalHomAdjunctionMapWithGivenInternalHom = @rec(
   output_source_getter_preconditions = [ ],
   output_range_getter_string = "i",
   output_range_getter_preconditions = [ ],
-  dual_operation = "TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom",
+  dual_operation = "TensorProductToInternalCoHomLeftAdjunctMorphismWithGivenInternalCoHom",
   dual_arguments_reversed = false,
 ),
 
-InternalHomToTensorProductAdjunctionMap = @rec(
+InternalHomToTensorProductLeftAdjunctMorphism = @rec(
   filter_list = [ "category", "object", "object", "morphism" ],
   return_type = "morphism",
   input_arguments_names = [ "cat", "b", "c", "g" ],
@@ -131,22 +234,22 @@ InternalHomToTensorProductAdjunctionMap = @rec(
   output_range_getter_string = "c",
   output_range_getter_preconditions = [ ],
   with_given_object_position = "Source",
-  dual_operation = "InternalCoHomToTensorProductAdjunctionMap",
-  dual_preprocessor_func = ( cat, a, b, g ) -> NTupleGAP( 4, Opposite( cat ), Opposite( b ), Opposite( a ), Opposite( g ) ),
+  dual_operation = "InternalCoHomToTensorProductLeftAdjunctMorphism",
+  dual_preprocessor_func = ( cat, a, b, g ) -> @NTupleGAP( 4, Opposite( cat ), Opposite( b ), Opposite( a ), Opposite( g ) ),
   dual_arguments_reversed = false,
   # Test in ClosedMonoidalCategoriesTest
 ),
 
-InternalHomToTensorProductAdjunctionMapWithGivenTensorProduct = @rec(
+InternalHomToTensorProductLeftAdjunctMorphismWithGivenTensorProduct = @rec(
   filter_list = [ "category", "object", "object", "morphism", "object" ],
   return_type = "morphism",
-  input_arguments_names = [ "cat", "b", "c", "g", "t" ],
-  output_source_getter_string = "t",
+  input_arguments_names = [ "cat", "b", "c", "g", "s" ],
+  output_source_getter_string = "s",
   output_source_getter_preconditions = [ ],
   output_range_getter_string = "c",
   output_range_getter_preconditions = [ ],
-  dual_operation = "InternalCoHomToTensorProductAdjunctionMapWithGivenTensorProduct",
-  dual_preprocessor_func = ( cat, a, b, g, t ) -> NTupleGAP( 4, Opposite( cat ), Opposite( b ), Opposite( a ), Opposite( g ),Opposite( t ) ),
+  dual_operation = "InternalCoHomToTensorProductLeftAdjunctMorphismWithGivenTensorProduct",
+  dual_preprocessor_func = ( cat, a, b, g, s ) -> @NTupleGAP( 5, Opposite( cat ), Opposite( b ), Opposite( a ), Opposite( g ), Opposite( s ) ),
   dual_arguments_reversed = false,
 ),
 
@@ -309,7 +412,7 @@ TensorProductInternalHomCompatibilityMorphismWithGivenObjects = @rec(
   output_range_getter_string = "range",
   dual_operation = "InternalCoHomTensorProductCompatibilityMorphismWithGivenObjects",
   dual_preprocessor_func =
-    ( cat, s, list, r ) -> NTupleGAP( 4, Opposite( cat ), Opposite( r ), [ Opposite( list[2] ), Opposite( list[4] ), Opposite( list[1] ), Opposite( list[3] ) ], Opposite( s ) ),
+    ( cat, s, list, r ) -> @NTupleGAP( 4, Opposite( cat ), Opposite( r ), [ Opposite( list[2] ), Opposite( list[4] ), Opposite( list[1] ), Opposite( list[3] ) ], Opposite( s ) ),
   dual_arguments_reversed = false,
 ),
 
@@ -417,7 +520,7 @@ LambdaElimination = @rec(
   output_range_getter_string = "b",
   output_range_getter_preconditions = [ ],
   dual_operation = "CoLambdaElimination",
-  dual_preprocessor_func = ( cat, a, b, alpha ) -> NTupleGAP( 4, Opposite( cat ), Opposite( b ), Opposite( a ), Opposite( alpha ) ),
+  dual_preprocessor_func = ( cat, a, b, alpha ) -> @NTupleGAP( 4, Opposite( cat ), Opposite( b ), Opposite( a ), Opposite( alpha ) ),
   dual_arguments_reversed = false,
   # Test in ClosedMonoidalCategoriesTest
 ),

@@ -17,8 +17,10 @@ DeclareGlobalVariable( "COCLOSED_MONOIDAL_CATEGORIES_METHOD_NAME_RECORD" );
 CAP_INTERNAL_CONSTRUCTIVE_CATEGORIES_RECORD.IsCoclosedMonoidalCategory  = @Concatenation( [
 "InternalCoHomOnObjects",
 "InternalCoHomOnMorphismsWithGivenInternalCoHoms",
-"CoclosedEvaluationMorphismWithGivenRange",
-"CoclosedCoevaluationMorphismWithGivenSource"
+"CoclosedMonoidalRightEvaluationMorphismWithGivenRange",
+"CoclosedMonoidalRightCoevaluationMorphismWithGivenSource",
+"CoclosedMonoidalLeftEvaluationMorphismWithGivenRange",
+"CoclosedMonoidalLeftCoevaluationMorphismWithGivenSource"
 ], CAP_INTERNAL_CONSTRUCTIVE_CATEGORIES_RECORD.IsMonoidalCategory );
 
 #! @Description
@@ -51,74 +53,146 @@ CAP_INTERNAL_CONSTRUCTIVE_CATEGORIES_RECORD.IsCoclosedMonoidalCategory  = @Conca
 
 #! @Description
 #! The arguments are two objects $a, b$.
-#! The output is the coclosed evaluation morphism $\mathrm[coclev]_[a,b]: a \rightarrow \mathrm[\underline[coHom]](a,b) \otimes b$, i.e.,
+#! The output is the coclosed right evaluation morphism $\mathrm[coclev]_[a,b]: b \rightarrow a \otimes \mathrm[\underline[coHom]](b,a)$, i.e.,
 #! the unit of the cohom tensor adjunction.
-#! @Returns a morphism in $\mathrm[Hom]( a, \mathrm[\underline[coHom]](a,b) \otimes b )$.
+#! @Returns a morphism in $\mathrm[Hom]( b, a \otimes \mathrm[\underline[coHom]](b,a) )$.
 #! @Arguments a, b
-@DeclareOperation( "CoclosedEvaluationMorphism",
+@DeclareOperation( "CoclosedMonoidalRightEvaluationMorphism",
                   [ IsCapCategoryObject, IsCapCategoryObject ] );
 
 #! @Description
-#! The arguments are two objects $a,b$ and an object $r == \mathrm[\underline[coHom]](a,b) \otimes b$.
-#! The output is the coclosed evaluation morphism $\mathrm[coclev]_[a,b]: a \rightarrow \mathrm[\underline[coHom]](a,b) \otimes b$, i.e.,
+#! The arguments are two objects $a,b$ and an object $r == a \otimes \mathrm[\underline[coHom]](b,a)$.
+#! The output is the coclosed right evaluation morphism $\mathrm[coclev]_[a,b]: b \rightarrow a \otimes \mathrm[\underline[coHom]](b,a)$, i.e.,
 #! the unit of the cohom tensor adjunction.
-#! @Returns a morphism in $\mathrm[Hom]( a, r )$.
+#! @Returns a morphism in $\mathrm[Hom]( b, r )$.
 #! @Arguments a, b, r
-@DeclareOperation( "CoclosedEvaluationMorphismWithGivenRange",
+@DeclareOperation( "CoclosedMonoidalRightEvaluationMorphismWithGivenRange",
                   [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );
 
 #! @Description
 #! The arguments are two objects $a,b$.
-#! The output is the coclosed coevaluation morphism $\mathrm[coclcoev]_[a,b]: \mathrm[\underline[coHom]](a \otimes b, b) \rightarrow a$, i.e.,
+#! The output is the coclosed right coevaluation morphism $\mathrm[coclcoev]_[a,b]: \mathrm[\underline[coHom]](a \otimes b, a) \rightarrow b$, i.e.,
 #! the counit of the cohom tensor adjunction.
-#! @Returns a morphism in $\mathrm[Hom]( \mathrm[\underline[coHom]](a \otimes b, b), a )$.
+#! @Returns a morphism in $\mathrm[Hom]( \mathrm[\underline[coHom]](a \otimes b, a), b )$.
 #! @Arguments a, b
-@DeclareOperation( "CoclosedCoevaluationMorphism",
+@DeclareOperation( "CoclosedMonoidalRightCoevaluationMorphism",
                   [ IsCapCategoryObject, IsCapCategoryObject ] );
 
 #! @Description
-#! The arguments are two objects $a,b$ and an object $s == \mathrm[\underline[coHom](a \otimes b, b)]$.
-#! The output is the coclosed coevaluation morphism $\mathrm[coclcoev]_[a,b]: \mathrm[\underline[coHom]](a \otimes b, b) \rightarrow a$, i.e.,
+#! The arguments are two objects $a,b$ and an object $s == \mathrm[\underline[coHom]](a \otimes b, a)$.
+#! The output is the coclosed right coevaluation morphism $\mathrm[coclcoev]_[a,b]: \mathrm[\underline[coHom]](a \otimes b, a) \rightarrow b$, i.e.,
 #! the unit of the cohom tensor adjunction.
-#! @Returns a morphism in $\mathrm[Hom]( s, a )$.
+#! @Returns a morphism in $\mathrm[Hom]( s, b )$.
 #! @Arguments a, b, s
-@DeclareOperation( "CoclosedCoevaluationMorphismWithGivenSource",
+@DeclareOperation( "CoclosedMonoidalRightCoevaluationMorphismWithGivenSource",
                   [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );
 
 #! @Description
-#! The arguments are two objects $c,b$ and a morphism $g: a \rightarrow c \otimes b$.
+#! The arguments are two objects $b,c$ and a morphism $g: a \rightarrow b \otimes c$.
 #! The output is a morphism $f: \mathrm[\underline[coHom]](a,b) \rightarrow c$
 #! corresponding to $g$ under the cohom tensor adjunction.
 #! @Returns a morphism in $\mathrm[Hom]( \mathrm[\underline[coHom]](a,b), c )$.
-#! @Arguments c, b, g
-@DeclareOperation( "TensorProductToInternalCoHomAdjunctionMap",
+#! @Arguments b, c, g
+@DeclareOperation( "TensorProductToInternalCoHomRightAdjunctMorphism",
                   [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism ] );
 
 #! @Description
-#! The arguments are two objects $c,b$, a morphism $g: a \rightarrow c \otimes b$ and an object $i == \mathrm[\underline[coHom](a,b)]$.
+#! The arguments are two objects $b,c$, a morphism $g: a \rightarrow b \otimes c$ and an object $i == \mathrm[\underline[coHom]](a,b)$.
 #! The output is a morphism $f: \mathrm[\underline[coHom]](a,b) \rightarrow c$
 #! corresponding to $g$ under the cohom tensor adjunction.
 #! @Returns a morphism in $\mathrm[Hom]( i, c )$.
-#! @Arguments c, b, g, i
-@DeclareOperation( "TensorProductToInternalCoHomAdjunctionMapWithGivenInternalCoHom",
+#! @Arguments b, c, g, i
+@DeclareOperation( "TensorProductToInternalCoHomRightAdjunctMorphismWithGivenInternalCoHom",
                   [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject ] );
 
 #! @Description
 #! The arguments are two objects $a,b$ and a morphism $f: \mathrm[\underline[coHom]](a,b) \rightarrow c$.
-#! The output is a morphism $g: a \rightarrow c \otimes b$ corresponding to $f$ under the
+#! The output is a morphism $g: a \rightarrow b \otimes c$ corresponding to $f$ under the
 #! cohom tensor adjunction.
-#! @Returns a morphism in $\mathrm[Hom](a, c \otimes b)$.
+#! @Returns a morphism in $\mathrm[Hom](a, b \otimes c)$.
 #! @Arguments a, b, f
-@DeclareOperation( "InternalCoHomToTensorProductAdjunctionMap",
+@DeclareOperation( "InternalCoHomToTensorProductRightAdjunctMorphism",
                   [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism ] );
 
 #! @Description
-#! The arguments are two objects $a,b$, a morphism $f: \mathrm[\underline[coHom]](a,b) \rightarrow c$ and an object $t == c \otimes b$.
-#! The output is a morphism $g: a \rightarrow c \otimes b$ corresponding to $f$ under the
+#! The arguments are two objects $a,b$, a morphism $f: \mathrm[\underline[coHom]](a,b) \rightarrow c$ and an object $t == b \otimes c$.
+#! The output is a morphism $g: a \rightarrow t$ corresponding to $f$ under the
 #! cohom tensor adjunction.
 #! @Returns a morphism in $\mathrm[Hom]( a, t )$.
 #! @Arguments a, b, f, t
-@DeclareOperation( "InternalCoHomToTensorProductAdjunctionMapWithGivenTensorProduct",
+@DeclareOperation( "InternalCoHomToTensorProductRightAdjunctMorphismWithGivenTensorProduct",
+                  [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject ] );
+
+#! @Description
+#! The arguments are two objects $a, b$.
+#! The output is the coclosed left evaluation morphism $\mathrm[coclev]_[a,b]: b \rightarrow \mathrm[\underline[coHom]](b,a) \otimes a$, i.e.,
+#! the unit of the cohom tensor adjunction.
+#! @Returns a morphism in $\mathrm[Hom]( b, \mathrm[\underline[coHom]](b,a) \otimes a )$.
+#! @Arguments a, b
+@DeclareOperation( "CoclosedMonoidalLeftEvaluationMorphism",
+                  [ IsCapCategoryObject, IsCapCategoryObject ] );
+
+#! @Description
+#! The arguments are two objects $a,b$ and an object $r == \mathrm[\underline[coHom]](b,a) \otimes a$.
+#! The output is the coclosed left evaluation morphism $\mathrm[coclev]_[a,b]: b \rightarrow \mathrm[\underline[coHom]](b,a) \otimes a$, i.e.,
+#! the unit of the cohom tensor adjunction.
+#! @Returns a morphism in $\mathrm[Hom]( b, r )$.
+#! @Arguments a, b, r
+@DeclareOperation( "CoclosedMonoidalLeftEvaluationMorphismWithGivenRange",
+                  [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );
+
+#! @Description
+#! The arguments are two objects $a,b$.
+#! The output is the coclosed left coevaluation morphism $\mathrm[coclcoev]_[a,b]: \mathrm[\underline[coHom]](b \otimes a, a) \rightarrow b$, i.e.,
+#! the counit of the cohom tensor adjunction.
+#! @Returns a morphism in $\mathrm[Hom]( \mathrm[\underline[coHom]](b \otimes a, a), b )$.
+#! @Arguments a, b
+@DeclareOperation( "CoclosedMonoidalLeftCoevaluationMorphism",
+                  [ IsCapCategoryObject, IsCapCategoryObject ] );
+
+#! @Description
+#! The arguments are two objects $a,b$ and an object $s == \mathrm[\underline[coHom]](b \otimes a, a)$.
+#! The output is the coclosed left coevaluation morphism $\mathrm[coclcoev]_[a,b]: \mathrm[\underline[coHom]](b \otimes a, a) \rightarrow b$, i.e.,
+#! the unit of the cohom tensor adjunction.
+#! @Returns a morphism in $\mathrm[Hom]( s, b )$.
+#! @Arguments a, b, s
+@DeclareOperation( "CoclosedMonoidalLeftCoevaluationMorphismWithGivenSource",
+                  [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ] );
+
+#! @Description
+#! The arguments are two objects $b,c$ and a morphism $g: a \rightarrow b \otimes c$.
+#! The output is a morphism $f: \mathrm[\underline[coHom]](a,c) \rightarrow b$
+#! corresponding to $g$ under the cohom tensor adjunction.
+#! @Returns a morphism in $\mathrm[Hom]( \mathrm[\underline[coHom]](a,c), b )$.
+#! @Arguments b, c, g
+@DeclareOperation( "TensorProductToInternalCoHomLeftAdjunctMorphism",
+                  [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism ] );
+
+#! @Description
+#! The arguments are two objects $b,c$, a morphism $g: a \rightarrow b \otimes c$ and an object $i == \mathrm[\underline[coHom]](a,c)$.
+#! The output is a morphism $f: \mathrm[\underline[coHom]](a,c) \rightarrow b$
+#! corresponding to $g$ under the cohom tensor adjunction.
+#! @Returns a morphism in $\mathrm[Hom]( i, b )$.
+#! @Arguments b, c, g, i
+@DeclareOperation( "TensorProductToInternalCoHomLeftAdjunctMorphismWithGivenInternalCoHom",
+                  [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject ] );
+
+#! @Description
+#! The arguments are two objects $a,c$ and a morphism $f: \mathrm[\underline[coHom]](a,c) \rightarrow b$.
+#! The output is a morphism $g: a \rightarrow b \otimes c$ corresponding to $f$ under the
+#! cohom tensor adjunction.
+#! @Returns a morphism in $\mathrm[Hom](a, b \otimes c)$.
+#! @Arguments a, c, f
+@DeclareOperation( "InternalCoHomToTensorProductLeftAdjunctMorphism",
+                  [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism ] );
+
+#! @Description
+#! The arguments are two objects $a,c$, a morphism $f: \mathrm[\underline[coHom]](a,c) \rightarrow b$ and an object $t == b \otimes c$.
+#! The output is a morphism $g: a \rightarrow t$ corresponding to $f$ under the
+#! cohom tensor adjunction.
+#! @Returns a morphism in $\mathrm[Hom]( a, t )$.
+#! @Arguments a, c, f, t
+@DeclareOperation( "InternalCoHomToTensorProductLeftAdjunctMorphismWithGivenTensorProduct",
                   [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryMorphism, IsCapCategoryObject ] );
 
 #! @Description

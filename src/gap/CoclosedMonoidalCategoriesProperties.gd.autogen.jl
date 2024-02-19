@@ -5,7 +5,7 @@
 #
 
 #! @Description
-#!  The property of the category <A>C</A> being coclosed monoidal.
+#!  The property of the category <A>C</A> being (bi)coclosed monoidal.
 #! @Arguments C
 @DeclareProperty( "IsCoclosedMonoidalCategory", IsCapCategory );
 
