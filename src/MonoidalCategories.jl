@@ -12,6 +12,4 @@ push!(ModulesForEvaluationStack, MonoidalCategories)
 
 include("init.jl")
 
-pop!(ModulesForEvaluationStack)
-
 end # module MonoidalCategories
