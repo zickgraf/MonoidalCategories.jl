@@ -5,7 +5,7 @@
 #
 
 ##
-InstallMethod( @__MODULE__,  TensorProductOp,
+@InstallMethod( TensorProductOp,
                [ IsList, IsCapCategoryObject ],
                
   function( list, object )
@@ -32,7 +32,7 @@ InstallMethod( @__MODULE__,  TensorProductOp,
 end );
 
 ##
-InstallMethod( @__MODULE__,  TensorProductOp,
+@InstallMethod( TensorProductOp,
                [ IsList, IsCapCategoryMorphism ],
                
   function( list, morphism )

@@ -5,7 +5,7 @@
 #
 
 ##
-InstallMethod( @__MODULE__,  CoclosedCoevaluationMorphism,
+@InstallMethod( CoclosedCoevaluationMorphism,
         [ IsCapCategoryObject, IsCapCategoryObject ],
         
   function( a, b )
@@ -15,7 +15,7 @@ InstallMethod( @__MODULE__,  CoclosedCoevaluationMorphism,
 end );
 
 ##
-InstallMethod( @__MODULE__,  CoclosedCoevaluationMorphismWithGivenSource,
+@InstallMethod( CoclosedCoevaluationMorphismWithGivenSource,
         [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ],
         
   function( a, b, s )
@@ -25,7 +25,7 @@ InstallMethod( @__MODULE__,  CoclosedCoevaluationMorphismWithGivenSource,
 end );
 
 ##
-InstallMethod( @__MODULE__,  CoclosedEvaluationMorphism,
+@InstallMethod( CoclosedEvaluationMorphism,
         [ IsCapCategoryObject, IsCapCategoryObject ],
         
   function( a, b )
@@ -35,7 +35,7 @@ InstallMethod( @__MODULE__,  CoclosedEvaluationMorphism,
 end );
 
 ##
-InstallMethod( @__MODULE__,  CoclosedEvaluationMorphismWithGivenRange,
+@InstallMethod( CoclosedEvaluationMorphismWithGivenRange,
         [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ],
         
   function( a, b, r )
@@ -45,7 +45,7 @@ InstallMethod( @__MODULE__,  CoclosedEvaluationMorphismWithGivenRange,
 end );
 
 ##
-InstallMethod( @__MODULE__,  CoevaluationMorphism,
+@InstallMethod( CoevaluationMorphism,
         [ IsCapCategoryObject, IsCapCategoryObject ],
         
   function( a, b )
@@ -55,7 +55,7 @@ InstallMethod( @__MODULE__,  CoevaluationMorphism,
 end );
 
 ##
-InstallMethod( @__MODULE__,  CoevaluationMorphismWithGivenRange,
+@InstallMethod( CoevaluationMorphismWithGivenRange,
         [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ],
         
   function( a, b, r )

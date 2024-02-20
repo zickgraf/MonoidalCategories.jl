@@ -31,19 +31,19 @@ end; CategoryFilter = IsSkeletalCategory );
 ####################################
 
 ##
-InstallMethod( @__MODULE__,  InternalHom,
+@InstallMethod( InternalHom,
         [ IsCapCategoryObject, IsCapCategoryObject ],
         
   InternalHomOnObjects );
 
 ##
-InstallMethod( @__MODULE__,  InternalHom,
+@InstallMethod( InternalHom,
         [ IsCapCategoryMorphism, IsCapCategoryMorphism ],
         
   InternalHomOnMorphisms );
 
 ##
-InstallMethod( @__MODULE__,  InternalHom,
+@InstallMethod( InternalHom,
         [ IsCapCategoryObject, IsCapCategoryMorphism ],
         
   function( a, beta )
@@ -53,7 +53,7 @@ InstallMethod( @__MODULE__,  InternalHom,
 end );
 
 ##
-InstallMethod( @__MODULE__,  InternalHom,
+@InstallMethod( InternalHom,
         [ IsCapCategoryMorphism, IsCapCategoryObject ],
         
   function( alpha, b )

@@ -35,7 +35,7 @@ AddDerivationToCAP( BraidingInverse,
 end; CategoryFilter = IsSkeletalCategory );
 
 ##
-InstallMethod( @__MODULE__,  CheckBraiding,
+@InstallMethod( CheckBraiding,
                [ IsCapCategoryObject, IsCapCategoryObject, IsCapCategoryObject ],
                
   function( A, B, C )
