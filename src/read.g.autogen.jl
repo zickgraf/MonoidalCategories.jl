@@ -112,3 +112,10 @@ include( "gap/ClosedMonoidalCategoriesTest.gi.autogen.jl" );
 include( "gap/CoclosedMonoidalCategoriesTest.gi.autogen.jl" );
 include( "gap/RigidSymmetricClosedMonoidalCategoriesTest.gi.autogen.jl" );
 include( "gap/RigidSymmetricCoclosedMonoidalCategoriesTest.gi.autogen.jl" );
+
+## WithGiven test methods
+
+include( "gap/LeftClosedMonoidalCategoriesTestWithGiven.gi.autogen.jl" );
+include( "gap/LeftCoclosedMonoidalCategoriesTestWithGiven.gi.autogen.jl" );
+include( "gap/ClosedMonoidalCategoriesTestWithGiven.gi.autogen.jl" );
+include( "gap/CoclosedMonoidalCategoriesTestWithGiven.gi.autogen.jl" );

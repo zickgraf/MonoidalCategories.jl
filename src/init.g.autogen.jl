@@ -88,3 +88,10 @@ include( "gap/ClosedMonoidalCategoriesTest.gd.autogen.jl" );
 include( "gap/CoclosedMonoidalCategoriesTest.gd.autogen.jl" );
 include( "gap/RigidSymmetricClosedMonoidalCategoriesTest.gd.autogen.jl" );
 include( "gap/RigidSymmetricCoclosedMonoidalCategoriesTest.gd.autogen.jl" );
+
+## WithGiven test methods
+
+include( "gap/LeftClosedMonoidalCategoriesTestWithGiven.gd.autogen.jl" );
+include( "gap/LeftCoclosedMonoidalCategoriesTestWithGiven.gd.autogen.jl" );
+include( "gap/ClosedMonoidalCategoriesTestWithGiven.gd.autogen.jl" );
+include( "gap/CoclosedMonoidalCategoriesTestWithGiven.gd.autogen.jl" );

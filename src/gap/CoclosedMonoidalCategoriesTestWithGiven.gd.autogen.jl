@@ -14,13 +14,9 @@
 #! * objects $a, b, c, d$
 #! * a morphism $\alpha: a \rightarrow b$
 #! * a morphism $\beta: c \rightarrow d$
-#! * a morphism $\gamma: 1 \rightarrow a \otimes b$
-#! * a morphism $\delta: 1 \rightarrow c \otimes d$
-#! * a morphism $\epsilon: \mathrm[coHom](a,b) \rightarrow 1$
-#! * a morphism $\zeta: \mathrm[coHom](c,d) \rightarrow 1$
-#! This function checks for every operation
+#! This function checks for some *WithGiven operations
 #! declared in CoclosedMonoidalCategories.gd
-#! if it is computable in the CAP category $cat$.
+#! if they are computable in the CAP category $cat$.
 #! If yes, then the operation is executed
 #! with the parameters given above and
 #! compared to the equivalent computation in
@@ -35,4 +31,4 @@
 #!    The advantage is, that more derivations might be tested.
 #!    On the downside, this might test fewer dual_pre/postprocessor_funcs.
 #! @Arguments cat, a, b, c, d, alpha, beta, gamma, delta, epsilon, zeta
-@DeclareGlobalFunction( "CoclosedMonoidalCategoriesTest" );
+@DeclareGlobalFunction( "CoclosedMonoidalCategoriesTestWithGiven" );

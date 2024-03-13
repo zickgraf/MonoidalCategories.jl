@@ -124,6 +124,10 @@ julia> ClosedMonoidalCategoriesTest( T, opposite, a, b, c, d, alpha, beta, gamma
 
 julia> ClosedMonoidalCategoriesTest( T, opposite_primitive, a, b, c, d, alpha, beta, gamma, delta, epsilon, zeta );
 
+julia> ClosedMonoidalCategoriesTestWithGiven( T, opposite, a, b, c, d, alpha, beta );
+
+julia> ClosedMonoidalCategoriesTestWithGiven( T, opposite_primitive, a, b, c, d, alpha, beta );
+
 julia> z = ZeroObject( T );
 
 julia> z_product_a = TensorProduct( z, a );
@@ -149,6 +153,10 @@ julia> zeta = MorphismConstructor( u, "f_uhomaz", hom_az );
 julia> ClosedMonoidalCategoriesTest( T, opposite, z, a, a, z, alpha, beta, gamma, delta, epsilon, zeta );
 
 julia> ClosedMonoidalCategoriesTest( T, opposite_primitive, z, a, a, z, alpha, beta, gamma, delta, epsilon, zeta );
+
+julia> ClosedMonoidalCategoriesTestWithGiven( T, opposite, z, a, a, z, alpha, beta );
+
+julia> ClosedMonoidalCategoriesTestWithGiven( T, opposite_primitive, z, a, a, z, alpha, beta );
 
 julia> a = "a" / T;
 
@@ -184,6 +192,10 @@ julia> CoclosedMonoidalCategoriesTest( T, opposite, a, b, c, d, alpha, beta, gam
 
 julia> CoclosedMonoidalCategoriesTest( T, opposite_primitive, a, b, c, d, alpha, beta, gamma, delta, epsilon, zeta );
 
+julia> CoclosedMonoidalCategoriesTestWithGiven( T, opposite, a, b, c, d, alpha, beta );
+
+julia> CoclosedMonoidalCategoriesTestWithGiven( T, opposite_primitive, a, b, c, d, alpha, beta );
+
 julia> z = ZeroObject( T );
 
 julia> z_product_a = TensorProduct( z, a );
@@ -209,6 +221,10 @@ julia> zeta = MorphismConstructor( cohom_az, "cohomazu", u );
 julia> CoclosedMonoidalCategoriesTest( T, opposite, z, a, a, z, alpha, beta, gamma, delta, epsilon, zeta );
 
 julia> CoclosedMonoidalCategoriesTest( T, opposite_primitive, z, a, a, z, alpha, beta, gamma, delta, epsilon, zeta );
+
+julia> CoclosedMonoidalCategoriesTestWithGiven( T, opposite, z, a, a, z, alpha, beta );
+
+julia> CoclosedMonoidalCategoriesTestWithGiven( T, opposite_primitive, z, a, a, z, alpha, beta );
 
 julia> a = "a" / T;
 

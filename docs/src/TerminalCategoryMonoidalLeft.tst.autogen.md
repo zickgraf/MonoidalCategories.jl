@@ -124,6 +124,10 @@ julia> LeftClosedMonoidalCategoriesTest( T, opposite, a, b, c, d, alpha, beta, g
 
 julia> LeftClosedMonoidalCategoriesTest( T, opposite_primitive, a, b, c, d, alpha, beta, gamma, delta, epsilon, zeta );
 
+julia> LeftClosedMonoidalCategoriesTestWithGiven( T, opposite, a, b, c, d, alpha, beta );
+
+julia> LeftClosedMonoidalCategoriesTestWithGiven( T, opposite_primitive, a, b, c, d, alpha, beta );
+
 julia> z = ZeroObject( T );
 
 julia> z_product_a = TensorProduct( z, a );
@@ -149,6 +153,10 @@ julia> zeta = MorphismConstructor( u, "f_uhomaz", hom_az );
 julia> LeftClosedMonoidalCategoriesTest( T, opposite, z, a, a, z, alpha, beta, gamma, delta, epsilon, zeta );
 
 julia> LeftClosedMonoidalCategoriesTest( T, opposite_primitive, z, a, a, z, alpha, beta, gamma, delta, epsilon, zeta );
+
+julia> LeftClosedMonoidalCategoriesTestWithGiven( T, opposite, z, a, a, z, alpha, beta );
+
+julia> LeftClosedMonoidalCategoriesTestWithGiven( T, opposite_primitive, z, a, a, z, alpha, beta );
 
 julia> a = "a" / T;
 
@@ -184,6 +192,10 @@ julia> LeftCoclosedMonoidalCategoriesTest( T, opposite, a, b, c, d, alpha, beta,
 
 julia> LeftCoclosedMonoidalCategoriesTest( T, opposite_primitive, a, b, c, d, alpha, beta, gamma, delta, epsilon, zeta );
 
+julia> LeftCoclosedMonoidalCategoriesTestWithGiven( T, opposite, a, b, c, d, alpha, beta );
+
+julia> LeftCoclosedMonoidalCategoriesTestWithGiven( T, opposite_primitive, a, b, c, d, alpha, beta );
+
 julia> z = ZeroObject( T );
 
 julia> z_product_a = TensorProduct( z, a );
@@ -209,6 +221,10 @@ julia> zeta = MorphismConstructor( cohom_az, "cohomazu", u );
 julia> LeftCoclosedMonoidalCategoriesTest( T, opposite, z, a, a, z, alpha, beta, gamma, delta, epsilon, zeta );
 
 julia> LeftCoclosedMonoidalCategoriesTest( T, opposite_primitive, z, a, a, z, alpha, beta, gamma, delta, epsilon, zeta );
+
+julia> LeftCoclosedMonoidalCategoriesTestWithGiven( T, opposite, z, a, a, z, alpha, beta );
+
+julia> LeftCoclosedMonoidalCategoriesTestWithGiven( T, opposite_primitive, z, a, a, z, alpha, beta );
 
 julia> a = "a" / T;
 
