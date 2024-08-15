@@ -74,6 +74,7 @@ include( "gap/LeftClosedMonoidalCategoriesDerivedMethods.gi.autogen.jl" );
 include( "gap/LeftCoclosedMonoidalCategoriesDerivedMethods.gi.autogen.jl" );
 
 include( "gap/ClosedMonoidalCategoriesDerivedMethods.gi.autogen.jl" );
+include( "gap/ClosedMonoidalCategoriesDerivedMethods_extra.gi.autogen.jl" );
 include( "gap/CoclosedMonoidalCategoriesDerivedMethods.gi.autogen.jl" );
 
 include( "gap/SymmetricClosedMonoidalCategoriesDerivedMethods.gi.autogen.jl" );
